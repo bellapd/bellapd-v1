@@ -1,6 +1,6 @@
 import { Heading, Stack, Text,  } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import Layout from '../components/layouts/Page'
+import Layout from '../components/Layout'
 
 const About: NextPage = () => {
     return (
@@ -11,7 +11,7 @@ const About: NextPage = () => {
 
             <Stack align="right" direction="row">
                 <Text>
-                   My name is Annabella Putri Dirgo, I'm a student at the National Tsing Hua University, Hsinchu, Taiwan. I'm currently working on projects related to web development using tools like React, Next-js, Golang, and Docker.
+                 My name is Annabella Putri Dirgo, I'm a student at the National Tsing Hua University, Hsinchu, Taiwan. I'm currently working on projects related to web development using tools like React, Next-js, Golang, and Docker.
                  I'm also creating a content for my blog where I discuss projects that I'm working on and create tutorials to educate others.
                 </Text>
             </Stack>           
