@@ -3,13 +3,28 @@ import path from 'path'
 import matter from 'gray-matter'
 import Layout from '../components/Layout'
 import Posts from './../components/Posts'
-import { Heading } from '@chakra-ui/react'
+import { Heading, Box, Stack } from '@chakra-ui/react'
 import type { IPost } from '../types/post.type'
 
 export default function Portfolio({ portfolios }: { portfolios: IPost[] }): JSX.Element {
     return (
-        <Layout>
-            <Heading as="h2" size="md" mb={3}>Portfolio</Heading>
+        <Layout >
+            <Stack align="Center">
+            <Heading size='3xl' fontSize='9rem' >
+                    <Box
+                    as='span'
+                    bgGradient='linear-gradient(90deg,#f0c27b, #4b1248)'
+                    bgClip='text'
+                    // _hover={{
+                    //     outlineColor: '#ffff',
+                    //     boxShadow: 'outline',
+                    //     borderColor: 'gray.300',
+                    // }}
+                    >
+                    Portfolio
+                    </Box>
+                </Heading>
+            </Stack>
             <Posts posts={portfolios} />
         </Layout>
     )
