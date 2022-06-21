@@ -1,9 +1,12 @@
 import Tags from './Tags'
 import NextLink from 'next/link'
 import type { IPost } from '../types/post.type'
-import { Heading, LinkBox, LinkOverlay, Text } from '@chakra-ui/react'
+import { LinkBox, Text, LinkOverlay, Heading } from '@chakra-ui/react'
+import { Color } from '../utils/color'
+
 
 export default function Posts({ posts }: { posts: IPost[] }): JSX.Element {
+    var randomColor: string = Color()
     return (
         <>
             {
@@ -17,12 +20,11 @@ export default function Posts({ posts }: { posts: IPost[] }): JSX.Element {
                             rounded="md"
                             key={post.slug}
                             _hover={{
-                                border: '1px solid',
-                                borderColor: 'purple',
-                                boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-                                transition: 'all 0.2s ease-in-out',
-                                transform: 'translateY(-5px)'
+                                border: `1px solid ${randomColor}`,
+                                boxShadow: `0px 0px 10px ${randomColor}`,
+                                transition: 'all 0.3s ease-in-out',
                             }}
+
                         >   
                             <Text
                                 fontSize="sm"
