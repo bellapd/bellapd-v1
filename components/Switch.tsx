@@ -7,7 +7,7 @@ export default function ColorModeSwitch({...props}): JSX.Element {
         <IconButton
             aria-label={colorMode === 'dark' ? 'Dark Mode' : 'Light Mode'}
             icon={colorMode === 'dark' ? <MoonIcon /> : <SunIcon />}
-            isRound
+            // isRound
             onMouseDown={toggleColorMode}
             {...props}
         />
