@@ -20,11 +20,10 @@ export default function Posts({ posts }: { posts: IPost[] }): JSX.Element {
                             rounded="md"
                             key={post.slug}
                             _hover={{
-                                border: `1px solid ${randomColor}`,
-                                boxShadow: `0px 0px 10px ${randomColor}`,
+                                border: '1px solid',
+                                boxShadow: '0px 0px 10px linear-gradient(to right, red, orange)',
                                 transition: 'all 0.3s ease-in-out',
                             }}
-
                         >   
                             <Text
                                 fontSize="sm"
