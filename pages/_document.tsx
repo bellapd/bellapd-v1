@@ -11,6 +11,7 @@ export default class MyDocument extends NextDocument {
                         rel="stylesheet"
                     />
                     <link rel="stylesheet" href="https://unpkg.com/dracula-prism/dist/css/dracula-prism.min.css" />
+                    <link rel="manifest" href="/manifest.json" />
                 </Head>
                 <body>
                     <ColorModeScript />
