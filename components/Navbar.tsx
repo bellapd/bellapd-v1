@@ -10,11 +10,13 @@ import {
   MenuItem,
   MenuDivider,
   Text,
+  IconButton,
 } from "@chakra-ui/react";
 import Navlink from "./Navlink";
 import Link from "next/link";
 import styled from "@emotion/styled";
 import Switch from "./Switch";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 export default function Navigation(): JSX.Element {
   const Navbar = styled(Box)`
@@ -35,49 +37,32 @@ export default function Navigation(): JSX.Element {
       as="nav"
     >
       <Flex py={2} px={5} maxW="container.sm" align="center" mx="auto">
-        <Flex marginLeft="auto">
+        <Flex marginRight="auto">
           <Flex display={{ base: "none", md: "flex" }}>
             <Navlink href="/">Home</Navlink>
             <Navlink href="/about">About</Navlink>
+            <Navlink href="/blog">Blog</Navlink>
             <Navlink href="/portfolio">Portfolio</Navlink>
           </Flex>
           {/* <Accent /> */}
-          <Switch />
           <Menu>
             <MenuButton
               // show menu only when container is smaller than 768px
               display={{ base: "none", md: "none", sm: "flex" }}
-              as={Button}
-              // rounded={'full'}
+              as={IconButton}
+              icon={<HamburgerIcon />}
               variant={"link"}
               cursor={"pointer"}
-              minW={0}
-            >
-              <Avatar
-                size={"sm"}
-                src={
-                  "https://avatars.dicebear.com/api/adventurer-neutral/:seed.svg"
-                }
-              />
-            </MenuButton>
+            />
             <MenuList alignItems={"center"}>
-              <br />
-              <Center>
-                <Avatar
-                  size={"2xl"}
-                  src={
-                    "https://avatars.dicebear.com/api/adventurer-neutral/:seed.svg"
-                  }
-                />
-              </Center>
-              <br />
-              <Center>
-                <Text as="p">Annabella Putri Dirgo</Text>
-              </Center>
-              <br />
-              <MenuDivider />
+              <MenuItem>
+                <Link href="/">Home</Link>
+              </MenuItem>
               <MenuItem>
                 <Link href="/about">About</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href="/blog">Blog</Link>
               </MenuItem>
               <MenuItem>
                 <Link href="/portfolio">Portfolio</Link>
@@ -85,6 +70,7 @@ export default function Navigation(): JSX.Element {
             </MenuList>
           </Menu>
         </Flex>
+        <Switch />
       </Flex>
     </Navbar>
   );
