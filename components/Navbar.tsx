@@ -1,25 +1,17 @@
 import {
-  Avatar,
   Box,
-  Button,
-  Center,
   Flex,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  MenuDivider,
-  Text,
   IconButton,
-  useColorMode,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import Navlink from "./Navlink";
 import Link from "next/link";
 import styled from "@emotion/styled";
 import Switch from "./Switch";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { generateKey } from "crypto";
 
 export default function Navigation(): JSX.Element {
   const Navbar = styled(Box)`
@@ -54,7 +46,7 @@ export default function Navigation(): JSX.Element {
               display={{ base: "none", md: "none", sm: "flex" }}
               as={IconButton}
               icon={<HamburgerIcon />}
-              variant={"link"}
+              variant="ghost"
             />
             <MenuList alignItems={"center"}>
               <MenuItem>
