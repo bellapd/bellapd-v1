@@ -11,12 +11,15 @@ import {
   MenuDivider,
   Text,
   IconButton,
+  useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Navlink from "./Navlink";
 import Link from "next/link";
 import styled from "@emotion/styled";
 import Switch from "./Switch";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { generateKey } from "crypto";
 
 export default function Navigation(): JSX.Element {
   const Navbar = styled(Box)`
@@ -52,7 +55,6 @@ export default function Navigation(): JSX.Element {
               as={IconButton}
               icon={<HamburgerIcon />}
               variant={"link"}
-              cursor={"pointer"}
             />
             <MenuList alignItems={"center"}>
               <MenuItem>
