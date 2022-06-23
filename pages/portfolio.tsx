@@ -13,8 +13,8 @@ export default function Portfolio({
 }): JSX.Element {
   return (
     <Layout>
-      <Stack align="Center">
-        <Heading size="3xl" fontSize="9rem">
+      <Stack align="left">
+        <Heading size="3xl" fontSize="5rem">
           <Box
             as="span"
             bgGradient="linear-gradient(90deg,#326199,#4fb1a1,#fcc055,#eb8d50,#df6e5b)"
