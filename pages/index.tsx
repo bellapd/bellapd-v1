@@ -5,6 +5,7 @@ import Posts from "../components/Posts";
 import Layout from "../components/Layout";
 import { Heading, VStack, Box } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
+import Readall from "../components/Readall";
 
 export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
   return (
@@ -25,6 +26,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
         Recent posts
       </Heading>
       <Posts posts={posts} />
+      <Readall />
     </Layout>
   );
 }
@@ -34,7 +36,7 @@ export const getStaticProps = async () => {
   const folders = fs.readdirSync(path.join(process.cwd(), "content", "blogs"));
 
   // iterate through all the files in /content/posts
-  const posts = folders.map((slug) => {
+  const posts = folders.slice(0, 2).map((slug) => {
     const content = fs.readFileSync(
       path.join("content", "blogs", slug, "index.mdx"),
       "utf-8"
