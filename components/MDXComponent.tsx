@@ -25,7 +25,7 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import NextImage from "next/image";
-import Series from "./series";
+import Series from "./Series";
 
 const CustomLink = (props: any) => {
   const { colorMode } = useColorMode();
