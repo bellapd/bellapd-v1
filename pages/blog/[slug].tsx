@@ -26,7 +26,7 @@ import rehypePrismDiff from "rehype-prism-diff";
 import { Color } from "../../utils/color";
 
 // infer mdxSource parameter type hint
-export default function Blog({ mdxSource }: IMdxPage, slug: string) {
+export default function Blog({ mdxSource }: IMdxPage) {
   return (
     <Layout>
       <Text fontSize="sm" color="gray.500">
