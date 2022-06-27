@@ -38,7 +38,6 @@ export default function Blog({ mdxSource }: IMdxPage, slug: string) {
         {mdxSource.frontMatter.title}
       </Heading>
       <Tags tags={mdxSource.frontMatter.tags} color={Color()} />
-      <ViewCounter slug={slug} blogPage={true} />
       <MDXRemote {...mdxSource} components={MDXComponents} />
     </Layout>
   );
