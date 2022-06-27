@@ -79,10 +79,8 @@ export default function Blog({ posts }: { posts: IPost[] }): JSX.Element {
 }
 
 export const getStaticProps = async () => {
-  // get the name of all folders in /content/posts
   const folders = fs.readdirSync(path.join(process.cwd(), "content", "blogs"));
 
-  // iterate through all the files in /content/posts
   var posts = folders.map((slug) => {
     const content = fs.readFileSync(
       path.join("content", "blogs", slug, "index.mdx"),
