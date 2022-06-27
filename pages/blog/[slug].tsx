@@ -45,7 +45,7 @@ export default function Blog({ mdxSource }: IMdxPage, slug: string) {
 }
 
 export const getStaticPaths = async () => {
-  const folders = fs.readdirSync(path.join("content", "posts"));
+  const folders = fs.readdirSync(path.join("content", "blogs"));
 
   const paths = folders.map((name) => ({
     params: {
@@ -66,7 +66,7 @@ export const getStaticProps = async ({
   params: { slug: string };
 }) => {
   const source = fs.readFileSync(
-    path.join("content", "posts", slug, "index.mdx"),
+    path.join("content", "blogs", slug, "index.mdx"),
     "utf-8"
   );
 
