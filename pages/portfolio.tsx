@@ -29,12 +29,12 @@ export default function Portfolio({
 
 export const getStaticProps = async () => {
   const folders = fs.readdirSync(
-    path.join(process.cwd(), "content", "portfolio")
+    path.join(process.cwd(), "content", "portfolios")
   );
 
   var posts = folders.map((slug) => {
     const content = fs.readFileSync(
-      path.join("content", "portfolio", slug, "index.mdx"),
+      path.join("content", "portfolios", slug, "index.mdx"),
       "utf-8"
     );
     const { data: frontMatter } = matter(content);
