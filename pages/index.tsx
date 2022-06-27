@@ -18,6 +18,10 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
           </Box>
           bella
         </Heading>
+        <Text as="i" fontSize="sm" my={6}>
+          An Undergraduate Student of Electrical Engineering and Computer
+          Science at National Tsing Hua University.
+        </Text>
       </Stack>
       <Text as="b" fontSize="xl" my={6}>
         Recent posts
