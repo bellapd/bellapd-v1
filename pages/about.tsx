@@ -6,15 +6,12 @@ import { Color } from "../utils/color";
 const About: NextPage = () => {
   return (
     <Layout>
-      <Stack align="Center">
-        <Heading size="3xl" fontSize="10rem">
-          <Box
-            as="span"
-            bgGradient="linear-gradient(90deg,#326199,#4fb1a1,#fcc055,#eb8d50,#df6e5b)"
-            bgClip="text"
-          >
-            About
+      <Stack align="Left">
+        <Heading as="h1" size="3xl">
+          <Box as="span" bg="#8D080D" bgClip="text">
+            A
           </Box>
+          bout
         </Heading>
       </Stack>
 

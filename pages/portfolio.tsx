@@ -14,14 +14,11 @@ export default function Portfolio({
   return (
     <Layout>
       <Stack align="left">
-        <Heading size="3xl" fontSize="5rem">
-          <Box
-            as="span"
-            bgGradient="linear-gradient(90deg,#326199,#4fb1a1,#fcc055,#eb8d50,#df6e5b)"
-            bgClip="text"
-          >
-            Portfolio
+        <Heading as="h1" size="3xl">
+          <Box as="span" bg="#24269B" bgClip="text">
+            P
           </Box>
+          ortfolio
         </Heading>
       </Stack>
       <Posts posts={portfolios} />
