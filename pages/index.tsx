@@ -14,9 +14,9 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
         <Heading as="h1" size="3xl">
           I'm{" "}
           <Box as="span" bg="#F2A814" bgClip="text">
-            B
+            Anna
           </Box>
-          ella
+          bella
         </Heading>
       </Stack>
       <Text as="b" fontSize="xl" my={6}>
