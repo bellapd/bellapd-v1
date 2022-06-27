@@ -24,7 +24,6 @@ import rehypeCodeTitles from "rehype-code-titles";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrismDiff from "rehype-prism-diff";
 import { Color } from "../../utils/color";
-import ViewCounter from "../../components/ViewCounter";
 
 // infer mdxSource parameter type hint
 export default function Blog({ mdxSource }: IMdxPage, slug: string) {
