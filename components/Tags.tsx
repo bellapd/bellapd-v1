@@ -1,5 +1,6 @@
 import NextLink from "next/link";
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import { Color } from "../utils/color";
 
 // pass props as an object
 export default function Tags({

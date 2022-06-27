@@ -23,6 +23,7 @@ import rehypePrismPlus from "rehype-prism-plus";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrismDiff from "rehype-prism-diff";
+
 import { Color } from "../../utils/color";
 
 // infer mdxSource parameter type hint
@@ -30,13 +31,13 @@ export default function Blog({ mdxSource }: IMdxPage) {
   return (
     <Layout>
       <Text fontSize="sm" color="gray.500">
-        {mdxSource.frontMatter.date} - {mdxSource.frontMatter.readingTime}{" "}
+        {mdxSource.frontmatter.date} - {mdxSource.frontmatter.readingTime}{" "}
         reading
       </Text>
-      <Heading as="h1" size="2xl" mt={1} mb={3}>
-        {mdxSource.frontMatter.title}
+      <Heading as="h1" size="3xl" my={5}>
+        {mdxSource.frontmatter.title}
       </Heading>
-      <Tags tags={mdxSource.frontMatter.tags} color={Color()} />
+      <Tags tags={mdxSource.frontmatter.tags} color={Color()} />
       <MDXRemote {...mdxSource} components={MDXComponents} />
     </Layout>
   );
@@ -71,7 +72,6 @@ export const getStaticProps = async ({
   const mdxSource = await serialize(source, {
     parseFrontmatter: true,
     mdxOptions: {
-      format: "mdx",
       remarkPlugins: [remarkGfm, remarkMath],
       rehypePlugins: [
         rehypeSlug,
@@ -81,6 +81,7 @@ export const getStaticProps = async ({
         rehypePrismPlus,
         rehypePrismDiff,
       ],
+      format: "mdx",
     },
   });
 
