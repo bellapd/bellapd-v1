@@ -23,28 +23,29 @@ import rehypePrismPlus from "rehype-prism-plus";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrismDiff from "rehype-prism-diff";
-
 import { Color } from "../../utils/color";
+import ViewCounter from "../../components/ViewCounter";
 
 // infer mdxSource parameter type hint
-export default function Blog({ mdxSource }: IMdxPage) {
+export default function Blog({ mdxSource }: IMdxPage, slug: string) {
   return (
     <Layout>
       <Text fontSize="sm" color="gray.500">
-        {mdxSource.frontmatter.date} - {mdxSource.frontmatter.readingTime}{" "}
+        {mdxSource.frontMatter.date} - {mdxSource.frontMatter.readingTime}{" "}
         reading
       </Text>
-      <Heading as="h1" size="3xl" my={5}>
-        {mdxSource.frontmatter.title}
+      <Heading as="h1" size="2xl" mt={1} mb={3}>
+        {mdxSource.frontMatter.title}
       </Heading>
-      <Tags tags={mdxSource.frontmatter.tags} color={Color()} />
+      <Tags tags={mdxSource.frontMatter.tags} color={Color()} />
+      <ViewCounter slug={slug} blogPage={true} />
       <MDXRemote {...mdxSource} components={MDXComponents} />
     </Layout>
   );
 }
 
 export const getStaticPaths = async () => {
-  const folders = fs.readdirSync(path.join("content", "blogs"));
+  const folders = fs.readdirSync(path.join("content", "posts"));
 
   const paths = folders.map((name) => ({
     params: {
@@ -65,13 +66,14 @@ export const getStaticProps = async ({
   params: { slug: string };
 }) => {
   const source = fs.readFileSync(
-    path.join("content", "blogs", slug, "index.mdx"),
+    path.join("content", "posts", slug, "index.mdx"),
     "utf-8"
   );
 
   const mdxSource = await serialize(source, {
     parseFrontmatter: true,
     mdxOptions: {
+      format: "mdx",
       remarkPlugins: [remarkGfm, remarkMath],
       rehypePlugins: [
         rehypeSlug,
@@ -81,13 +83,13 @@ export const getStaticProps = async ({
         rehypePrismPlus,
         rehypePrismDiff,
       ],
-      format: "mdx",
     },
   });
 
   return {
     props: {
       mdxSource,
+      slug: slug,
     },
   };
 };
