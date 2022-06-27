@@ -5,6 +5,7 @@ import Posts from "../components/Posts";
 import Layout from "../components/Layout";
 import { Heading, Box, Stack, Text } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
+import { DateTime } from "luxon";
 import Readall from "../components/Readall";
 
 export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
@@ -33,11 +34,9 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
 }
 
 export const getStaticProps = async () => {
-  // get all folders' in content/portfolios
   const folders = fs.readdirSync(path.join(process.cwd(), "content", "blogs"));
 
-  // iterate through all the files in /content/posts
-  const posts = folders.slice(0, 2).map((slug) => {
+  var posts = folders.slice(0, 2).map((slug) => {
     const content = fs.readFileSync(
       path.join("content", "blogs", slug, "index.mdx"),
       "utf-8"
@@ -47,6 +46,18 @@ export const getStaticProps = async () => {
       frontMatter,
       slug: slug,
     };
+  });
+
+  posts.sort((a, b) => {
+    const aDate: typeof a.frontMatter.date = DateTime.fromFormat(
+      a.frontMatter.date,
+      "LLLL dd, yyyy"
+    );
+    const bDate: typeof a.frontMatter.date = DateTime.fromFormat(
+      b.frontMatter.date,
+      "LLLL dd, yyyy"
+    );
+    return bDate - aDate;
   });
 
   return {

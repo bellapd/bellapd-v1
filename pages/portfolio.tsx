@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Layout from "../components/Layout";
 import Posts from "./../components/Posts";
+import { DateTime } from "luxon";
 import { Heading, Box, Stack } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
 
@@ -27,15 +28,13 @@ export default function Portfolio({
 }
 
 export const getStaticProps = async () => {
-  // get all folders' in content/portfolios
   const folders = fs.readdirSync(
-    path.join(process.cwd(), "content", "portfolios")
+    path.join(process.cwd(), "content", "portfolio")
   );
 
-  // iterate through all the folders
-  const portfolios = folders.map((slug) => {
+  var posts = folders.map((slug) => {
     const content = fs.readFileSync(
-      path.join("content", "portfolios", slug, "index.mdx"),
+      path.join("content", "portfolio", slug, "index.mdx"),
       "utf-8"
     );
     const { data: frontMatter } = matter(content);
@@ -45,12 +44,21 @@ export const getStaticProps = async () => {
     };
   });
 
+  posts.sort((a, b) => {
+    const aDate: typeof a.frontMatter.date = DateTime.fromFormat(
+      a.frontMatter.date,
+      "LLLL dd, yyyy"
+    );
+    const bDate: typeof a.frontMatter.date = DateTime.fromFormat(
+      b.frontMatter.date,
+      "LLLL dd, yyyy"
+    );
+    return bDate - aDate;
+  });
+
   return {
     props: {
-      portfolios,
+      posts,
     },
   };
 };
-function useColorMode() {
-  throw new Error("Function not implemented.");
-}
