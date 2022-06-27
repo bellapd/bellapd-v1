@@ -3,28 +3,25 @@ import path from "path";
 import matter from "gray-matter";
 import Posts from "../components/Posts";
 import Layout from "../components/Layout";
-import { Heading, VStack, Box } from "@chakra-ui/react";
+import { Heading, Box, Stack, Text } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
 import Readall from "../components/Readall";
 
 export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
   return (
     <Layout>
-      <VStack spacing={8}>
-        <Heading as="h1" fontSize="8xl" maxW={{ base: "m", md: "xl" }}>
-          It's{" "}
-          <Box
-            as="span"
-            bgGradient="linear-gradient(90deg,#326199,#4fb1a1,#fcc055,#eb8d50,#df6e5b)"
-            bgClip="text"
-          >
-            Annabella
+      <Stack align={"left"} my={6}>
+        <Heading as="h1" size="3xl">
+          I'm{" "}
+          <Box as="span" bg="#F2A814" bgClip="text">
+            B
           </Box>
+          ella
         </Heading>
-      </VStack>
-      <Heading as="h2" justifyContent={"center"} size="lg" my={6}>
+      </Stack>
+      <Text as="b" fontSize="xl" my={6}>
         Recent posts
-      </Heading>
+      </Text>
       <Posts posts={posts} />
       <Readall />
     </Layout>
