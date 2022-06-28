@@ -1,4 +1,4 @@
-<h3>Hey 👋<br>I'm Bella<br>a Electrical Engineering and Computer Science Student/h3>
+<h3>Hey 👋<br>I'm Bella<br>a Electrical Engineering and Computer Science Student
 
 ##### NOW
 
