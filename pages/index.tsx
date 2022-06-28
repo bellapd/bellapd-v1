@@ -36,7 +36,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
       <Text as="b" fontSize="xl">
         Recent posts
       </Text>
-      <Posts posts={posts} />
+      <Posts posts={posts} type="blog" />
       <Readall />
     </Layout>
   );

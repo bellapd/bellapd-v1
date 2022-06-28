@@ -4,7 +4,13 @@ import type { IPost } from "../types/post.type";
 import { LinkBox, Text, LinkOverlay, Heading } from "@chakra-ui/react";
 import { Color } from "../utils/color";
 
-export default function Posts({ posts }: { posts: IPost[] }): JSX.Element {
+export default function Posts({
+  posts,
+  type,
+}: {
+  posts: IPost[];
+  type: string;
+}): JSX.Element {
   var randomColor: string = Color();
   return (
     <>
@@ -27,7 +33,7 @@ export default function Posts({ posts }: { posts: IPost[] }): JSX.Element {
             <Text fontSize="sm" color="gray.500">
               {post.frontMatter.date} - {post.frontMatter.readingTime} reading
             </Text>
-            <NextLink href={"/blog/" + post.slug} passHref>
+            <NextLink href={"/" + type + "/" + post.slug} passHref>
               <LinkOverlay>
                 <Heading as="h1">{post.frontMatter.title}</Heading>
               </LinkOverlay>

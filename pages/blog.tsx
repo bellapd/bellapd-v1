@@ -68,7 +68,7 @@ export default function Blog({ posts }: { posts: IPost[] }): JSX.Element {
           )}
         </InputGroup>
       </FormControl>
-      {filteredPosts.length > 0 && <Posts posts={filteredPosts} />}
+      {filteredPosts.length > 0 && <Posts posts={filteredPosts} type="blog" />}
       {filteredPosts.length === 0 && (
         <Text my={12} fontSize="md">
           No posts found

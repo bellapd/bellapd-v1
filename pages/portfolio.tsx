@@ -16,7 +16,7 @@ export default function Portfolio({
       <Heading as="h2" size="md" mb={3}>
         Portfolio
       </Heading>
-      <Posts posts={portfolios} />
+      <Posts posts={portfolios} type="portfolio" />
     </Layout>
   );
 }
