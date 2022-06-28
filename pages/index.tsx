@@ -15,18 +15,17 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
       <HStack align={"left"} my={6} mb={10}>
         <Image
           borderRadius="full"
-          boxSize="150px"
+          boxSize="100px"
           src="https://i.ibb.co/FhfYZ8L/logo.png"
-          mt={-5}
           mr={5}
         />
-        <Heading as="h2" size="3xl">
+        <Heading as="h2" size="2xl">
           I'm{" "}
           <Box as="span" bg="#E9CA53" bgClip="text">
             Anna
           </Box>
           bella
-          <Text fontSize="xs" my={6}>
+          <Text fontSize="sm" my={6}>
             An Undergraduate Student of Electrical Engineering and Computer
             Science at National Tsing Hua University.
           </Text>
