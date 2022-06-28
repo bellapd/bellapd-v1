@@ -36,7 +36,7 @@ export default function Blog({ posts }: { posts: IPost[] }): JSX.Element {
     <Layout>
       <Stack align="left">
         <Heading as="h1" size="3xl">
-          <Box as="span" bg="#F2A814" bgClip="text">
+          <Box as="span" bg="#E9CA53" bgClip="text">
             B
           </Box>
           log

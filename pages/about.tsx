@@ -8,7 +8,7 @@ const About: NextPage = () => {
     <Layout>
       <Stack align="Left">
         <Heading as="h1" size="3xl">
-          <Box as="span" bg="#F2A814" bgClip="text">
+          <Box as="span" bg="#E9CA53" bgClip="text">
             A
           </Box>
           bout
