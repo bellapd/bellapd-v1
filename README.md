@@ -1,10 +1,10 @@
-<h3>Halo 👋<br>I'm Bella<br>an Electrical Engineering and Computer Science Student
+<h3>Hey 👋<br>I'm Bella<br>an Electrical Engineering and Computer Science Student
 
 ##### NOW
 
 - ✨ Latest Project:
-  [Personal Website] (https://bellapd.vercel.app);
-  [Schedulearn]
+  - [Personal Website] (https://bellapd.vercel.app);
+  - [Schedulearn]
 
 ##### BIO
 
