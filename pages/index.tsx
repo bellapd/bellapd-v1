@@ -18,6 +18,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
           boxSize="100px"
           src="https://i.ibb.co/FhfYZ8L/logo.png"
           mr={5}
+          mt={-1}
         />
         <Heading as="h2" size="2xl">
           I'm{" "}
@@ -25,14 +26,14 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
             Anna
           </Box>
           bella
-          <Text fontSize="sm" my={6}>
+          <Text fontSize="sm" my={4}>
             An Undergraduate Student of Electrical Engineering and Computer
             Science at National Tsing Hua University.
           </Text>
         </Heading>
       </HStack>
 
-      <Text as="b" fontSize="xl" my={6}>
+      <Text as="b" fontSize="xl">
         Recent posts
       </Text>
       <Posts posts={posts} />
