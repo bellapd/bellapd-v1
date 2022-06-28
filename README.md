@@ -2,7 +2,9 @@
 
 ##### NOW
 
-- ✨ Latest Project -[Personal Website] (https://bellapd.vercel.app); -[Schedulearn]
+- ✨ Latest Project:
+  [Personal Website] (https://bellapd.vercel.app);
+  [Schedulearn]
 
 ##### BIO
 
