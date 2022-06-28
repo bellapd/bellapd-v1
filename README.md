@@ -1,16 +1,15 @@
-### Hi there 👋
+<h3>Hey 👋<br>I'm Bella<br>a Electrical Engineering and Computer Science Student/h3>
 
-<!--
-**bellapd/bellapd** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+##### NOW
 
-Here are some ideas to get you started:
+- ✨ Latest Project
+  [Personal Website] (https://bellapd.vercel.app);
+  [Schedulearn]
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+##### BIO
+
+- 🏫 I'm currently studying at **National Trsing Hua University**
+- ⚙️ I use : `React`, `Next-js`, `.js`, `.tsx`, `.css`, `Golang`, `Docker`.
+- 🌱 Learning all about **web development (Frontend & Backend)** and **Machine Learning**
+- 💬 Ping me about **design**, **development**, **design thinking**
+- 📫 Reach me: [annabellaputridirgo@gmail.com]
