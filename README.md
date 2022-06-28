@@ -1,5 +1,7 @@
 <h3>Hey 👋<br>I'm Bella<br>an Electrical Engineering and Computer Science Student
 
+---
+
 ##### NOW
 
 - ✨ Latest Project:
