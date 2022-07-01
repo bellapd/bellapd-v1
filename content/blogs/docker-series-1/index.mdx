@@ -2,7 +2,7 @@
 title: Docker Series 1 - Introduction
 date: "July 1, 2022"
 readingTime: 3 mins
-description: This is the first part of the series on Docker.
+description: This is the first part of the series on Docker. It covers the background understanding of Docker.
 tags: ["blogs", "docker"]
 publish: true
 ---
@@ -27,8 +27,71 @@ And as you are probably aware, it has become a crucial piece of technology for a
 
 # What is Docker?
 
+**Docker** is on software platform that could build and deploy virtualization to run on the same host operating system.
+The virtualization in Docker is performed on system-level, also called **Docker containers**.
+
+The term "docker" may refer to either the tools (the commands and a daemon) or to the `Dockerfile` file format. Docker is developed using `Go` programming language.
+
+<Alert status="info">
+  <AlertIcon />
+  It is also important to understand Docker “slangs 😎" such as Docker Image, Docker
+  Registries, and Docker Container!
+</Alert>
+1. **Docker Image**
+
+Docker images act as a set of instructions (to execute the code)
+to build the container.
+
+2. **Docker Registries**
+
+Docker Registries acts as a storage and distribution system for Docker images.
+
+3. **Docker Container**
+
+When we create an image and begin to run it, we are doing inside of a Docker container. We could modify,
+create, and manage it.
+
 # Why do we need to use Docker?
 
-# What is Docker Image and Containers?
+Even though Containers and VM are similar in resource isolation and allocation benefits,
+but there is a difference between both of it which containers are more efficient
+since the virtualize in operating system instead of hardware.
 
+Docker made pre-built images, meaning all the required dependencies will be included in a container.
+We can see Docker images as a blueprint for docker creation. With these Docker images, developers can create
+Docker containers containing the stuff they define in `Dockerfile`.
+
+![Docker vs Hypervisor when doing a virtualization (src: https://www.docker.com/resources/what-container/)](/images/blogs/docker1_container.jpg)
+
+Many businesses have switched from virtual machines (VMs) to containers since they are not only more lighter but also very simple to maintain.
+
+The entire ecosystem of containers can be run and maintained by one developer (or even a small team of developers) rather easily because each container can be versioned using its `Dockerfile`.
+On the other hand, just being able to run and maintain VMs would require an infrastructure person.
+
+Also talking about its robustness, it uses minimal memory when compared to a virtual machine (which would have a complete operating system installed and running on it).
+As opposed to the few minutes needed to boot up a virtual computer, this cuts down the boot-up time to only a few seconds.
+
+<Alert status="success">
+  <AlertIcon />
+  Because they are stateless, containers are the ideal instrument if you want fast
+  workloads 🚀!
+</Alert>
 # Important Docker Commands
+
+Here are some important Docker commands and its function to be noted:
+
+| COMMAND                           | DEFINITION                    |
+| --------------------------------- | ----------------------------- |
+| `docker version`                  | get current version of docker |
+| `docker info`                     | list the command information  |
+| `docker pull <image_name>`        | pull an image                 |
+| `docker push <image_name>`        | push an image                 |
+| `docker start <container_name>`   | start a running container     |
+| `docker stop <container_name>`    | stop a running container      |
+| `docker restart <container_name>` | restart a running container   |
+| `docker rm -f <container_name>`   | remove forcefully a container |
+| `docker rmi <image_name>`         | remove an image               |
+| `docker images`                   | list all the images           |
+| `docker ps -a`                    | list all the containers       |
+| `docker cleanup`                  | remove all stopped container  |
+| `docker run <image_name>`         | run an image                  |
