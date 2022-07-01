@@ -16,7 +16,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
         <Image
           borderRadius="full"
           boxSize="100px"
-          src="https://i.ibb.co/FhfYZ8L/logo.png"
+          src="/images/avatar.png"
           mr={5}
           mt={-1}
         />
