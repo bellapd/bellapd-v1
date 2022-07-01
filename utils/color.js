@@ -1,4 +1,4 @@
 export function Color() {
-  const colors = ["gray", "red", "orange", "blue", "yellow"];
+  const colors = ["yellow"];
   return colors[Math.floor(Math.random() * colors.length)];
 }
