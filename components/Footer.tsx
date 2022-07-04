@@ -32,6 +32,7 @@ export default function Footer(): JSX.Element {
               aria-label={item.key}
               icon={item.icon}
               variant="ghost"
+              isRound
               mr={5}
             />
           </Link>

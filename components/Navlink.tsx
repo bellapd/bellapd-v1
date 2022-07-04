@@ -13,10 +13,9 @@ const Navlink = ({
       <Link
         px={4}
         py={2}
-        rounded={"md"}
+        rounded={"full"}
         _hover={{
-          textDecoration: "none",
-          bg: useColorModeValue("gray.200", "gray.700"),
+          bg: "gray.50",
         }}
       >
         {children}
