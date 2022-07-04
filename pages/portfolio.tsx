@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Layout from "../components/Layout";
 import Posts from "./../components/Posts";
-import { Heading } from "@chakra-ui/react";
+import { Text, Heading, HStack } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
 
 export default function Portfolio({
@@ -13,9 +13,12 @@ export default function Portfolio({
 }): JSX.Element {
   return (
     <Layout>
-      <Heading as="h2" size="md" mb={3}>
-        Portfolio
-      </Heading>
+      <HStack align="left">
+        <Heading fontSize="40px" pr={6} mt={-5}>
+          <mark>Portfolio</mark>
+        </Heading>
+        <Text fontSize="15px">Here is some projects that I have done</Text>
+      </HStack>
       <Posts posts={portfolios} type="portfolio" />
     </Layout>
   );

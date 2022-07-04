@@ -23,10 +23,12 @@ export default function Posts({
             borderWidth="1px"
             rounded="md"
             key={post.slug}
+            //outline color
+            borderColor="blackAlpha.800"
             _hover={{
               border: `1px solid`,
-              borderColor: randomColor + ".500",
-              boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
+              borderColor: randomColor + ".200",
+              boxShadow: "0px 0px 40px rgba(0, 0, 0, 0.1)",
               transition: "all 0.3s ease-in-out",
             }}
           >

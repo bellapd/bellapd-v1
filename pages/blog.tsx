@@ -11,8 +11,7 @@ import {
   InputRightElement,
   CloseButton,
   Text,
-  Stack,
-  Box,
+  HStack,
 } from "@chakra-ui/react";
 import Layout from "../components/Layout";
 import type { IPost } from "../types/post.type";
@@ -34,14 +33,16 @@ export default function Blog({ posts }: { posts: IPost[] }): JSX.Element {
 
   return (
     <Layout>
-      <Stack align="left">
-        <Heading as="h1" size="3xl">
-          <Box as="span" bg="#E9CA53" bgClip="text">
-            B
-          </Box>
-          log
+      <HStack align="left">
+        <Heading fontSize="40px" pr={10}>
+          <mark>Blog</mark>
         </Heading>
-      </Stack>
+        <Text fontSize="15px">
+          I'm actively blogging about <strong>backend</strong> and{" "}
+          <strong>frontend</strong> development. Check out the most recent
+          discoveries!
+        </Text>
+      </HStack>
       <FormControl mt={5}>
         <InputGroup>
           <InputLeftElement

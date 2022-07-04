@@ -17,13 +17,6 @@ export default function Dropdown(): JSX.Element {
       <MenuList alignItems={"center"}>
         <LinkBox>
           <MenuItem>
-            <NextLink href="/" passHref>
-              <LinkOverlay>Home</LinkOverlay>
-            </NextLink>
-          </MenuItem>
-        </LinkBox>
-        <LinkBox>
-          <MenuItem>
             <NextLink href="/about" passHref>
               <LinkOverlay>About</LinkOverlay>
             </NextLink>

@@ -3,41 +3,31 @@ import path from "path";
 import matter from "gray-matter";
 import Posts from "../components/Posts";
 import Layout from "../components/Layout";
-import { Heading, Box, HStack, Text, VStack } from "@chakra-ui/react";
+import { Heading, HStack, Stack, Text, Divider } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
 import { DateTime } from "luxon";
 import Readall from "../components/Readall";
-import { Image } from "@chakra-ui/react";
 
 export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
   return (
     <Layout>
-      <HStack align={"left"} my={6} mb={10}>
-        <Image
-          borderRadius="full"
-          boxSize="100px"
-          src="/images/avatar.png"
-          mr={5}
-          mt={-1}
-        />
-        <Heading as="h2" size="2xl">
-          I'm{" "}
-          <Box as="span" bg="#E9CA53" bgClip="text">
-            Anna
-          </Box>
-          bella
-          <Text fontSize="sm" my={4}>
-            An Undergraduate Student of Electrical Engineering and Computer
-            Science at National Tsing Hua University.
-          </Text>
+      <HStack align={"left"} mb={10}>
+        <Heading fontSize="40px" mt={-8}>
+          <mark>Annabella</mark> Putri Dirgo
         </Heading>
+        <Text fontSize="15px">
+          an undergraduate <kbd>computer science</kbd> student at{" "}
+          <strong>National Tsing Hua University</strong>
+        </Text>
       </HStack>
-
-      <Text as="b" fontSize="xl">
-        Recent posts
-      </Text>
-      <Posts posts={posts} type="blog" />
-      <Readall />
+      <Divider />
+      <Stack align={"left"} pt={5}>
+        <Text as="b" fontSize="xl" pb={2}>
+          Recent posts
+        </Text>
+        <Posts posts={posts} type="blog" />
+        <Readall />
+      </Stack>
     </Layout>
   );
 }
