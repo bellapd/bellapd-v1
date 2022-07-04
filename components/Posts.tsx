@@ -32,12 +32,12 @@ export default function Posts({
               transition: "all 0.3s ease-in-out",
             }}
           >
-            <Text fontSize="sm" color="gray.500">
+            <Text fontSize="sm" as="i" color="gray.500">
               {post.frontMatter.date} - {post.frontMatter.readingTime} reading
             </Text>
             <NextLink href={"/" + type + "/" + post.slug} passHref>
               <LinkOverlay>
-                <Heading as="h1">{post.frontMatter.title}</Heading>
+                <Heading fontSize={"3xl"}>{post.frontMatter.title}</Heading>
               </LinkOverlay>
             </NextLink>
             <Text as="p" my={5}>

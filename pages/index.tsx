@@ -12,11 +12,11 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
   return (
     <Layout>
       <HStack align={"left"} mb={10}>
-        <Heading fontSize="40px" mt={-8}>
-          <mark>Annabella</mark> Putri Dirgo
+        <Heading fontSize="35px" mt={-1} mr={10}>
+          <mark>Annabella</mark>
         </Heading>
         <Text fontSize="15px">
-          an undergraduate <kbd>computer science</kbd> student at{" "}
+          I'm a Undergraduate <kbd>computer science</kbd> student at{" "}
           <strong>National Tsing Hua University</strong>
         </Text>
       </HStack>
