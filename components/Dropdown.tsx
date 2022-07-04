@@ -1,42 +1,94 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
+import React from "react";
 import {
-  LinkBox,
-  LinkOverlay,
+  Flex,
+  Text,
+  Icon,
+  Link,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  IconButton,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import NextLink from "next/link";
+import { BiChevronDown } from "react-icons/bi";
 
-export default function Dropdown(): JSX.Element {
+const MenuContainer = () => {
   return (
-    <Menu>
-      <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="ghost" />
-      <MenuList alignItems={"center"}>
-        <LinkBox>
-          <MenuItem>
-            <NextLink href="/about" passHref>
-              <LinkOverlay>About</LinkOverlay>
-            </NextLink>
-          </MenuItem>
-        </LinkBox>
-        <LinkBox>
-          <MenuItem>
-            <NextLink href="/blog" passHref>
-              <LinkOverlay>Blog</LinkOverlay>
-            </NextLink>
-          </MenuItem>
-        </LinkBox>
-        <LinkBox>
-          <MenuItem>
-            <NextLink href="/portfolio" passHref>
-              <LinkOverlay>Portfolio</LinkOverlay>
-            </NextLink>
-          </MenuItem>
-        </LinkBox>
-      </MenuList>
+    <Flex justifyContent="center" alignItems="right" p={{ base: 4, sm: 3 }}>
+      <DropDownMenu />
+    </Flex>
+  );
+};
+
+const dropdownLinks = [
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Blog",
+    path: "/blog",
+  },
+  {
+    name: "Portfolio",
+    path: "/portfolio",
+  },
+];
+
+const DropDownMenu = () => {
+  return (
+    <Menu autoSelect={false} isLazy>
+      {({ isOpen, onClose }) => (
+        <>
+          <MenuButton>
+            <Flex alignItems="center" fontWeight="500">
+              <Text>Menu</Text>
+              <Icon
+                as={BiChevronDown}
+                h={5}
+                w={5}
+                ml={1}
+                transition="all .25s ease-in-out"
+                transform={isOpen ? "rotate(180deg)" : ""}
+              />
+            </Flex>
+          </MenuButton>
+          <MenuList
+            border="1px solid"
+            boxShadow={useColorModeValue(
+              "2px 4px 6px 2px rgba(160, 174, 192, 0.6)",
+              "2px 4px 6px 2px rgba(9, 17, 28, 0.6)"
+            )}
+          >
+            {dropdownLinks.map((link, index) => (
+              <MenuLink
+                key={index}
+                name={link.name}
+                path={link.path}
+                onClose={onClose}
+              />
+            ))}
+          </MenuList>
+        </>
+      )}
     </Menu>
   );
+};
+
+interface MenuLinkProps {
+  name: string;
+  path: string;
+  onClose: () => void;
 }
+
+const MenuLink = ({ name, path, onClose }: MenuLinkProps) => {
+  return (
+    <Link href={path} onClick={() => onClose()}>
+      <MenuItem>
+        <Text>{name}</Text>
+      </MenuItem>
+    </Link>
+  );
+};
+
+export default MenuContainer;
