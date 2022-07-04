@@ -9,6 +9,7 @@ export default function Navigation(): JSX.Element {
         rightIcon={<ArrowForwardIcon />}
         colorScheme="gray"
         variant="ghost"
+        transition={"all 0.3s ease-in-out"}
       >
         <Link href="/blog">Read All Post</Link>
       </Button>
