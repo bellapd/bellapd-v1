@@ -13,6 +13,7 @@ export default function Navigation(): JSX.Element {
       height="100%"
       width="100%"
       as="nav"
+      transition={"all 0.3s ease-in-out"}
     >
       <Flex py={2} px={5} maxW="container.sm" align="center" mx="auto">
         <Navlink href="/">
@@ -23,9 +24,15 @@ export default function Navigation(): JSX.Element {
             <Dropdown />
           ) : (
             <Flex display={{ base: "none", md: "flex" }}>
-              <Navlink href="/about">About</Navlink>
-              <Navlink href="/blog">Blog</Navlink>
-              <Navlink href="/portfolio">Portfolio</Navlink>
+              <Navlink href="/about">
+                <strong>01</strong> About
+              </Navlink>
+              <Navlink href="/blog">
+                <strong>02 </strong> Blog
+              </Navlink>
+              <Navlink href="/portfolio">
+                <strong>03 </strong> Portfolio
+              </Navlink>
             </Flex>
           )}
         </Flex>
