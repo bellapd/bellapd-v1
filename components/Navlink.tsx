@@ -1,4 +1,4 @@
-import { Link, useColorModeValue } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/react";
 import Page from "next/link";
 
 const Navlink = ({
@@ -15,7 +15,7 @@ const Navlink = ({
         py={2}
         rounded={"full"}
         _hover={{
-          bg: "gray.50",
+          border: "1px solid",
         }}
       >
         {children}
