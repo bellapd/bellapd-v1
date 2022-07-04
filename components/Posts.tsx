@@ -1,7 +1,13 @@
 import Tags from "./Tags";
 import NextLink from "next/link";
 import type { IPost } from "../types/post.type";
-import { LinkBox, Text, LinkOverlay, Heading } from "@chakra-ui/react";
+import {
+  LinkBox,
+  Text,
+  LinkOverlay,
+  Heading,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { Color } from "../utils/color";
 
 export default function Posts({
@@ -24,10 +30,10 @@ export default function Posts({
             rounded="md"
             key={post.slug}
             //outline color
-            borderColor="blackAlpha.800"
+            borderColor={useColorModeValue("black", "white")}
             _hover={{
-              border: `1px solid`,
-              borderColor: randomColor + ".200",
+              border: `2px solid`,
+              borderColor: randomColor + ".300",
               boxShadow: "0px 0px 40px rgba(0, 0, 0, 0.1)",
               transition: "all 0.3s ease-in-out",
             }}
