@@ -1,4 +1,4 @@
-import { Box, Flex, useMediaQuery } from "@chakra-ui/react";
+import { Box, Flex, Image, useMediaQuery } from "@chakra-ui/react";
 import Navlink from "./Navlink";
 import Switch from "./Switch";
 import Dropdown from "./Dropdown";
@@ -15,12 +15,14 @@ export default function Navigation(): JSX.Element {
       as="nav"
     >
       <Flex py={2} px={5} maxW="container.sm" align="center" mx="auto">
-        <Flex marginRight="auto">
+        <Navlink href="/">
+          <Image borderRadius="full" boxSize="50px" src="/images/avatar.png" />
+        </Navlink>
+        <Flex marginLeft="auto">
           {isMobile ? (
             <Dropdown />
           ) : (
             <Flex display={{ base: "none", md: "flex" }}>
-              <Navlink href="/">Home</Navlink>
               <Navlink href="/about">About</Navlink>
               <Navlink href="/blog">Blog</Navlink>
               <Navlink href="/portfolio">Portfolio</Navlink>
