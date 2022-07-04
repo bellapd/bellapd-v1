@@ -1,6 +1,8 @@
-import { Heading, Stack, Text } from "@chakra-ui/react";
+import { Heading, Text, Stack, Divider, VStack } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Layout from "../components/Layout";
+import Milestone from "../components/Milestone";
+import Skillset from "../components/Skillset";
 
 const About: NextPage = () => {
   return (
@@ -11,14 +13,20 @@ const About: NextPage = () => {
         </Heading>
       </Stack>
 
-      <Stack align="right" direction="row" my={7}>
+      <VStack align="right" direction="row" my={7}>
         <Text>
-          My name is Annabella Putri Dirgo, I'm a student at the National Tsing
-          Hua University, Hsinchu, Taiwan. I'm currently working on projects
-          related to web development using tools like React, Next-js, Golang,
-          and Docker.
+          Hi There 👋🏼 , My name is <strong>Annabella Putri Dirgo</strong>, I'm
+          currently an undergraduate student at National Tsing Hua University in
+          Hsinchu, Taiwan and I study Electrical Engineering and Computer
+          Science. I'm working on projects related to web development using
+          tools like <kbd>React</kbd>, <kbd>Next-js</kbd>, <kbd>Golang</kbd>,
+          and <kbd>Docker</kbd>.
         </Text>
-      </Stack>
+
+        <Milestone />
+
+        <Skillset />
+      </VStack>
     </Layout>
   );
 };
