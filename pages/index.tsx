@@ -16,7 +16,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
           <mark>Annabella</mark>
         </Heading>
         <Text fontSize="15px">
-          I'm a Undergraduate <kbd>computer science</kbd> student at{" "}
+          an undergraduate computer science student at{" "}
           <strong>National Tsing Hua University</strong>
         </Text>
       </HStack>
