@@ -11,7 +11,7 @@ import {
   InputRightElement,
   CloseButton,
   Text,
-  HStack,
+  VStack,
 } from "@chakra-ui/react";
 import Layout from "../components/Layout";
 import type { IPost } from "../types/post.type";
@@ -33,8 +33,8 @@ export default function Blog({ posts }: { posts: IPost[] }): JSX.Element {
 
   return (
     <Layout>
-      <HStack align="left">
-        <Heading fontSize="40px" pr={10}>
+      <VStack align="left">
+        <Heading fontSize="40px">
           <mark>Blog</mark>
         </Heading>
         <Text fontSize="15px">
@@ -42,7 +42,7 @@ export default function Blog({ posts }: { posts: IPost[] }): JSX.Element {
           <strong>frontend</strong> development. Check out the most recent
           discoveries!
         </Text>
-      </HStack>
+      </VStack>
       <FormControl mt={5}>
         <InputGroup>
           <InputLeftElement

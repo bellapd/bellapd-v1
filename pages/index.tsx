@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Posts from "../components/Posts";
 import Layout from "../components/Layout";
-import { Heading, HStack, Stack, Text, Divider } from "@chakra-ui/react";
+import { Heading, VStack, Stack, Text, Divider } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
 import { DateTime } from "luxon";
 import Readall from "../components/Readall";
@@ -11,15 +11,15 @@ import Readall from "../components/Readall";
 export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
   return (
     <Layout>
-      <HStack align={"left"} mb={10}>
-        <Heading fontSize="35px" mt={-1} mr={10}>
+      <VStack align={"left"} mb={5}>
+        <Heading fontSize="35px">
           <mark>Annabella</mark>
         </Heading>
         <Text fontSize="15px">
           an undergraduate computer science student at{" "}
           <strong>National Tsing Hua University</strong>
         </Text>
-      </HStack>
+      </VStack>
       <Divider />
       <Stack align={"left"} pt={5}>
         <Text as="b" fontSize="xl" pb={2}>
