@@ -19,7 +19,6 @@ import {
 } from "react-icons/si";
 import { GrGolang } from "react-icons/gr";
 import { IconType } from "react-icons";
-import { useState } from "react";
 import { Color } from "../utils/color";
 
 interface IFeature {
@@ -91,7 +90,7 @@ const Features = () => {
           <Box
             key={index}
             bg={useColorModeValue("gray.100", "gray.700")}
-            p={7}
+            width={["100%", "100%", "100%", "110%"]}
             rounded="lg"
             textAlign="center"
             position="relative"
@@ -117,10 +116,10 @@ const Features = () => {
             >
               <Icon color="black" w={8} h={8} as={feature.icon} />
             </Flex>
-            <Text fontWeight="600" fontSize="xl" mt={6}>
+            <Text fontWeight="600" fontSize="2xl" mt={6}>
               {feature.heading}
             </Text>
-            <Text fontWeight="200" fontSize="lg" mt={6}>
+            <Text fontWeight="300" fontSize="md" mt={23} mb={5}>
               {feature.category}
             </Text>
           </Box>
