@@ -71,7 +71,7 @@ const features: IFeature[] = [
 ];
 
 const Skills = () => {
-  var randomColor: string = "#fc909f";
+  var randomColor: string = Color();
   var bgColor = useColorModeValue("gray.100", "gray.700");
   return (
     <Container maxW="6xl" p={{ base: 5, md: 10 }}>
@@ -92,7 +92,7 @@ const Skills = () => {
             rounded="lg"
             textAlign="center"
             position="relative"
-            width="200px"
+            width="170px"
             height="150px"
             css={{
               border: `2px solid`,
