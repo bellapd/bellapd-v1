@@ -31,19 +31,18 @@ const features: IFeature[] = [
   {
     heading: "React",
     icon: FaReact,
-    category: "Web Development",
+    category: "Web Technology",
   },
   {
     heading: "Chakra UI",
     icon: SiChakraui,
-    category: "Web Development",
+    category: "Web Technology",
   },
   {
     heading: "Next.js",
     icon: SiNextdotjs,
-    category: "Web Development",
+    category: "Web Technology",
   },
-
   {
     heading: "TypeScript",
     icon: SiTypescript,
@@ -54,7 +53,6 @@ const features: IFeature[] = [
     icon: SiPython,
     category: "Programming Language",
   },
-
   {
     heading: "Golang",
     icon: GrGolang,
@@ -65,7 +63,6 @@ const features: IFeature[] = [
     icon: SiGithub,
     category: "Tools",
   },
-
   {
     heading: "Docker",
     icon: SiDocker,
@@ -73,8 +70,9 @@ const features: IFeature[] = [
   },
 ];
 
-const Features = () => {
-  var randomColor: string = Color();
+const Skills = () => {
+  var randomColor: string = "#fc909f";
+  var bgColor = useColorModeValue("gray.100", "gray.700");
   return (
     <Container maxW="6xl" p={{ base: 5, md: 10 }}>
       <chakra.h3 fontSize="4xl" fontWeight="bold" mb={20} textAlign="left">
@@ -89,14 +87,20 @@ const Features = () => {
         {features.map((feature, index) => (
           <Box
             key={index}
-            bg={useColorModeValue("gray.100", "gray.700")}
-            width={["100%", "100%", "100%", "110%"]}
+            bg={bgColor}
+            p={7}
             rounded="lg"
             textAlign="center"
             position="relative"
+            width="200px"
+            height="150px"
+            css={{
+              border: `2px solid`,
+              borderColor: "transparent",
+            }}
             _hover={{
               border: `2px solid`,
-              borderColor: randomColor + ".300",
+              borderColor: randomColor,
               boxShadow: "0px 0px 40px rgba(0, 0, 0, 0.1)",
               transition: "all 0.3s ease-in-out",
             }}
@@ -116,12 +120,10 @@ const Features = () => {
             >
               <Icon color="black" w={8} h={8} as={feature.icon} />
             </Flex>
-            <Text fontWeight="600" fontSize="2xl" mt={6}>
+            <Text fontWeight="600" fontSize="xl" my={3}>
               {feature.heading}
             </Text>
-            <Text fontWeight="300" fontSize="md" mt={23} mb={5}>
-              {feature.category}
-            </Text>
+            <Text fontSize="md">{feature.category}</Text>
           </Box>
         ))}
       </SimpleGrid>
@@ -129,4 +131,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default Skills;
