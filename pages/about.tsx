@@ -2,7 +2,7 @@ import { Heading, Text, Stack, Divider, VStack } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Layout from "../components/Layout";
 import Milestone from "../components/Milestone";
-import Skillset from "../components/Skillset";
+import Skills from "../components/Skillset";
 
 const About: NextPage = () => {
   return (
@@ -25,7 +25,7 @@ const About: NextPage = () => {
 
         <Milestone />
 
-        <Skillset />
+        <Skills />
       </VStack>
     </Layout>
   );
