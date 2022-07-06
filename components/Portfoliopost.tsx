@@ -6,8 +6,6 @@ import {
   LinkOverlay,
   Heading,
   useColorModeValue,
-  Image,
-  HStack,
 } from "@chakra-ui/react";
 import { Color } from "../utils/color";
 
@@ -39,8 +37,6 @@ export default function Posts({
               transition: "all 0.3s ease-in-out",
             }}
           >
-            <Image src="/images/portfolio/personalweb-display.png"></Image>
-
             <Text fontSize="sm" as="i" color="gray.500">
               {post.frontMatter.date} - {post.frontMatter.readingTime} reading
             </Text>
