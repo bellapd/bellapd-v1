@@ -24,14 +24,14 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import NextImage from "next/image";
 import Series from "./Series";
+import Image from "next/image";
 
 const CustomLink = (props: any) => {
   const { colorMode } = useColorMode();
   const color = {
     light: "blue.500",
-    dark: "blue.500",
+    dark: "blue.300",
   };
 
   const href = props.href;
@@ -46,6 +46,49 @@ const CustomLink = (props: any) => {
   }
 
   return <Link color={color[colorMode]} isExternal {...props} />;
+};
+
+const CustomImages = (props: any) => {
+  if (props.title !== undefined) {
+    return (
+      <figure
+        style={{
+          background: `white`,
+          borderRadius: `0.5rem`,
+          marginBottom: `1.5rem`,
+        }}
+      >
+        <Image
+          src={props.src}
+          alt={props.alt}
+          width={128}
+          height={64}
+          layout="responsive"
+          loading="lazy"
+        />
+        <figcaption
+          style={{
+            textAlign: "center",
+            fontSize: "0.9rem",
+            color: "black",
+          }}
+        >
+          {props.title}
+        </figcaption>
+      </figure>
+    );
+  } else {
+    return (
+      <Image
+        src={props.src}
+        alt={props.alt}
+        width={128}
+        height={64}
+        layout="responsive"
+        loading="lazy"
+      />
+    );
+  }
 };
 
 const Quote = (props: any) => {
@@ -73,50 +116,54 @@ const Quote = (props: any) => {
   );
 };
 
-const DocsHeading = (props: any) => (
-  <Heading
-    css={{
-      scrollMarginTop: "100px",
-      scrollSnapMargin: "100px", // Safari
-      "&[id]": {
-        pointerEvents: "none",
-      },
-      "&[id]:before": {
-        display: "block",
-        height: " 6rem",
-        marginTop: "-6rem",
-        visibility: "hidden",
-        content: `""`,
-      },
-      "&[id]:hover a": { opacity: 1 },
-    }}
-    {...props}
-    mb="1em"
-    mt="2em"
-  >
-    <Box pointerEvents="auto">
-      {props.children}
-      {props.id && (
-        <Box
-          aria-label="anchor"
-          as="a"
-          color="blue.500"
-          fontWeight="normal"
-          outline="none"
-          _focus={{
-            opacity: 1,
-            boxShadow: "outline",
-          }}
-          opacity="0"
-          ml="0.375rem"
-          href={`#${props.id}`}
-        >
-          #
-        </Box>
-      )}
-    </Box>
-  </Heading>
-);
+const DocsHeading = (props: any) => {
+  const { colorMode } = useColorMode();
+  const color = {
+    light: "blue.500",
+    dark: "blue.300",
+  };
+  return (
+    <Heading
+      css={{
+        scrollMarginTop: "100px",
+        scrollSnapMargin: "100px", // Safari
+        "&[id]": {
+          pointerEvents: "none",
+        },
+        "&[id]:before": {
+          display: "block",
+          visibility: "hidden",
+          content: `""`,
+        },
+        "&[id]:hover a": { opacity: 1 },
+      }}
+      {...props}
+      mt="1.5em"
+    >
+      <Box pointerEvents="auto">
+        {props.children}
+        {props.id && (
+          <Box
+            aria-label="anchor"
+            as="a"
+            color={color[colorMode]}
+            fontWeight="normal"
+            outline="none"
+            _focus={{
+              opacity: 1,
+              boxShadow: "outline",
+            }}
+            opacity="0"
+            ml="0.375rem"
+            href={`#${props.id}`}
+          >
+            #
+          </Box>
+        )}
+      </Box>
+    </Heading>
+  );
+};
 
 const Hr = () => {
   const { colorMode } = useColorMode();
@@ -135,10 +182,12 @@ const MDXComponent = {
   p: (props: any) => <Text as="p" my={5} lineHeight="taller" {...props} />,
   strong: (props: any) => <Text as="strong" fontWeight="semibold" {...props} />,
 
-  li: (props: any) => <ListItem ml={10} {...props} />,
-  ul: (props: any) => <List styleType="arrow" spacing={1} {...props} />,
+  li: (props: any) => <ListItem ml={6} {...props} />,
+  ul: (props: any) => (
+    <List as="ul" styleType="circle" mt={5} spacing={1} {...props} />
+  ),
   ol: (props: any) => (
-    <List as="ol" styleType="decimal" spacing={1} {...props} />
+    <List as="ol" styleType="decimal" mt={5} spacing={1} {...props} />
   ),
 
   h1: (props: any) => (
@@ -154,7 +203,7 @@ const MDXComponent = {
     <DocsHeading as="h4" size="sm" fontWeight="bold" {...props} />
   ),
   h5: (props: any) => (
-    <DocsHeading as="h5" size="sm" fontWeight="bold" {...props} />
+    <DocsHeading as="h5" size="xs" fontWeight="bold" {...props} />
   ),
   h6: (props: any) => (
     <DocsHeading as="h6" size="xs" fontWeight="bold" {...props} />
@@ -162,7 +211,7 @@ const MDXComponent = {
 
   // for table
   tr: (props: any) => <Tr {...props} />,
-  th: (props: any) => <Th fontSize="md" {...props} />,
+  th: (props: any) => <Th {...props} />,
   td: (props: any) => <Td {...props} />,
   thead: (props: any) => <Thead {...props} />,
   tbody: (props: any) => <Tbody {...props} />,
@@ -181,14 +230,13 @@ const MDXComponent = {
   AlertIcon,
   Box,
   Button,
+  NextLink,
   Series,
   hr: Hr,
   a: CustomLink,
   blockquote: Quote,
-  image: (props: any) => (
-    <NextImage {...props} layout="responsive" priority loading="lazy" />
-  ),
-  Alert: (props: any) => <Alert my={5} borderRadius="0.5rem" {...props} />,
+  img: (props: any) => <CustomImages {...props} />,
+  Alert: (props: any) => <Alert my={5} {...props} />,
 };
 
 export default MDXComponent;
