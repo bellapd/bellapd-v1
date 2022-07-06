@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { theme } from "@chakra-ui/react";
+import { theme, useColorModeValue } from "@chakra-ui/react";
 
 const prismStyles = css`
   .highlight-line {
@@ -95,8 +95,8 @@ const prismStyles = css`
 
   :not(pre) > code {
     font-size: ${theme.fontSizes["sm"]};
-    color: #ff79c6;
-    background: #282a36;
+    color: #205191;
+    background: #e9eff6;
     padding: ${theme.space[1]} ${theme.space[2]};
     border-radius: ${theme.radii.md};
   }
