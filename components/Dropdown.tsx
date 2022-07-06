@@ -22,14 +22,17 @@ const MenuContainer = () => {
 
 const dropdownLinks = [
   {
+    id: "01",
     name: "About",
     path: "/about",
   },
   {
+    id: "02",
     name: "Blog",
     path: "/blog",
   },
   {
+    id: "03",
     name: "Portfolio",
     path: "/portfolio",
   },
@@ -63,6 +66,7 @@ const DropDownMenu = () => {
             {dropdownLinks.map((link, index) => (
               <MenuLink
                 key={index}
+                id={link.id}
                 name={link.name}
                 path={link.path}
                 onClose={onClose}
@@ -76,16 +80,20 @@ const DropDownMenu = () => {
 };
 
 interface MenuLinkProps {
+  id: string;
   name: string;
   path: string;
   onClose: () => void;
 }
 
-const MenuLink = ({ name, path, onClose }: MenuLinkProps) => {
+const MenuLink = ({ id, name, path, onClose }: MenuLinkProps) => {
   return (
     <Link href={path} onClick={() => onClose()}>
       <MenuItem>
-        <Text>{name}</Text>
+        <Text>
+          <strong>{id} </strong>
+          {name}
+        </Text>
       </MenuItem>
     </Link>
   );
