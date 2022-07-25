@@ -24,8 +24,6 @@ import rehypeCodeTitles from "rehype-code-titles";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrismDiff from "rehype-prism-diff";
 
-import { Color } from "../../utils/color";
-
 // infer mdxSource parameter type hint
 export default function Blog({ mdxSource }: IMdxPage) {
   return (
@@ -37,7 +35,7 @@ export default function Blog({ mdxSource }: IMdxPage) {
       <Heading as="h1" size="3xl" my={5}>
         {mdxSource.frontmatter.title}
       </Heading>
-      <Tags tags={mdxSource.frontmatter.tags} color={Color()} />
+      <Tags tags={mdxSource.frontmatter.tags} />
       <MDXRemote {...mdxSource} components={MDXComponents} />
     </Layout>
   );

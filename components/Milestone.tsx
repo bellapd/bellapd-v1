@@ -8,14 +8,13 @@ import {
   Circle,
   Flex,
   Text,
-  ScaleFade,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FaTools } from "react-icons/fa";
 import { FiPackage, FiHome, FiCheckCircle } from "react-icons/fi";
 
 const Milestones = () => {
-  const linkColor = "purple.400";
+  const linkColor = useColorModeValue("dark", "light");
   const linkHoverColor = "yellow.500";
 
   return (

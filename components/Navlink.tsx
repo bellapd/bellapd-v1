@@ -11,11 +11,11 @@ const Navlink = ({
   return (
     <Page href={href}>
       <Link
-        px={4}
+        px={3}
         py={2}
-        rounded={"full"}
+        rounded="full"
         _hover={{
-          border: "1px solid",
+          textDecoration: "underline",
         }}
       >
         {children}

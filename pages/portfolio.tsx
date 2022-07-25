@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Layout from "../components/Layout";
-import Portfoliopost from "./../components/Portfoliopost";
+import Posts from "./../components/Posts";
 import { Text, Heading, VStack } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
 
@@ -19,7 +19,7 @@ export default function Portfolio({
         </Heading>
         <Text fontSize="15px">Here is some projects that I have done</Text>
       </VStack>
-      <Portfoliopost posts={portfolios} type="portfolio" />
+      <Posts posts={portfolios} type="portfolio" />
     </Layout>
   );
 }

@@ -1,14 +1,7 @@
 import Tags from "./Tags";
 import NextLink from "next/link";
 import type { IPost } from "../types/post.type";
-import {
-  LinkBox,
-  Text,
-  LinkOverlay,
-  Heading,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { Color } from "../utils/color";
+import { LinkBox, Text, LinkOverlay, Heading } from "@chakra-ui/react";
 
 export default function Posts({
   posts,
@@ -17,7 +10,6 @@ export default function Posts({
   posts: IPost[];
   type: string;
 }): JSX.Element {
-  var randomColor: string = Color();
   return (
     <>
       {posts.map((post) => {
@@ -26,14 +18,13 @@ export default function Posts({
             as="article"
             p="5"
             my={5}
-            borderWidth="1px"
+            borderWidth="2px"
             rounded="md"
             key={post.slug}
-            //outline color
-            borderColor={useColorModeValue("black", "white")}
+            borderColor="gray.300"
             _hover={{
               border: `2px solid`,
-              borderColor: randomColor + ".300",
+              borderColor: "dark",
               boxShadow: "0px 0px 40px rgba(0, 0, 0, 0.1)",
               transition: "all 0.3s ease-in-out",
             }}
@@ -46,11 +37,17 @@ export default function Posts({
                 <Heading fontSize={"3xl"}>{post.frontMatter.title}</Heading>
               </LinkOverlay>
             </NextLink>
-            <Text as="p" my={5}>
-              {post.frontMatter.description}
-            </Text>
-            {post.frontMatter.tags && (
-              <Tags tags={post.frontMatter.tags} color={randomColor} />
+            {post.frontMatter.tags ? (
+              <>
+                <Text as="p" my={5} color="gray.500">
+                  {post.frontMatter.description}
+                </Text>
+                <Tags tags={post.frontMatter.tags} />
+              </>
+            ) : (
+              <Text as="p" mt={5} color="gray.500">
+                {post.frontMatter.description}
+              </Text>
             )}
           </LinkBox>
         );

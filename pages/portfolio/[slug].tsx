@@ -24,8 +24,6 @@ import rehypePrismDiff from "rehype-prism-diff";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
-import { Color } from "../../utils/color";
-
 export default function Portfolio({ mdxSource }: IMdxPage) {
   return (
     <Layout>

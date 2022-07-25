@@ -95,8 +95,8 @@ const prismStyles = css`
 
   :not(pre) > code {
     font-size: ${theme.fontSizes["sm"]};
-    color: #205191;
-    background: #e9eff6;
+    color: #702459;
+    background: #fed7e2;
     padding: ${theme.space[1]} ${theme.space[2]};
     border-radius: ${theme.radii.md};
   }

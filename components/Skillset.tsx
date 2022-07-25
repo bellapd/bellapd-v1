@@ -19,7 +19,6 @@ import {
 } from "react-icons/si";
 import { GrGolang } from "react-icons/gr";
 import { IconType } from "react-icons";
-import { Color } from "../utils/color";
 
 interface IFeature {
   icon: IconType;
@@ -71,7 +70,6 @@ const features: IFeature[] = [
 ];
 
 const Skills = () => {
-  var randomColor: string = Color();
   var bgColor = useColorModeValue("gray.100", "gray.700");
   return (
     <Container maxW="6xl" p={{ base: 5, md: 10 }}>
@@ -100,7 +98,7 @@ const Skills = () => {
             }}
             _hover={{
               border: `2px solid`,
-              borderColor: randomColor,
+              borderColor: useColorModeValue("dark", "light"),
               boxShadow: "0px 0px 40px rgba(0, 0, 0, 0.1)",
               transition: "all 0.3s ease-in-out",
             }}
@@ -109,7 +107,7 @@ const Skills = () => {
               p={2}
               w="max-content"
               color="white"
-              bg="yellow.300"
+              bg="dark"
               rounded="md"
               marginInline="auto"
               pos="absolute"
@@ -118,7 +116,7 @@ const Skills = () => {
               top="-1.5rem"
               boxShadow="lg"
             >
-              <Icon color="black" w={8} h={8} as={feature.icon} />
+              <Icon color="white" w={8} h={8} as={feature.icon} />
             </Flex>
             <Text fontWeight="600" fontSize="xl" my={3}>
               {feature.heading}

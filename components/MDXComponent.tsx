@@ -30,8 +30,8 @@ import Image from "next/image";
 const CustomLink = (props: any) => {
   const { colorMode } = useColorMode();
   const color = {
-    light: "blue.500",
-    dark: "blue.300",
+    light: "dark",
+    dark: "light",
   };
 
   const href = props.href;
@@ -94,8 +94,8 @@ const CustomImages = (props: any) => {
 const Quote = (props: any) => {
   const { colorMode } = useColorMode();
   const bgColor = {
-    light: "blue.50",
-    dark: "blue.900",
+    light: "dark",
+    dark: "light",
   };
 
   return (
@@ -119,8 +119,8 @@ const Quote = (props: any) => {
 const DocsHeading = (props: any) => {
   const { colorMode } = useColorMode();
   const color = {
-    light: "blue.500",
-    dark: "blue.300",
+    light: "dark",
+    dark: "light",
   };
   return (
     <Heading
