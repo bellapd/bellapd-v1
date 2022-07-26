@@ -5,7 +5,7 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
 // components
-import Tags from "./../../components/Tags";
+import Authors from "../../components/Authors";
 import Layout from "../../components/Layout";
 import MDXComponents from "../../components/MDXComponent";
 
@@ -34,6 +34,7 @@ export default function Portfolio({ mdxSource }: IMdxPage) {
       <Heading as="h1" size="3xl" my={5}>
         {mdxSource.frontmatter.title}
       </Heading>
+      <Authors authors={mdxSource.frontmatter.authors} />
       <MDXRemote {...mdxSource} components={MDXComponents} />
     </Layout>
   );
