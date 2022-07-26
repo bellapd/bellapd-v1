@@ -1,8 +1,9 @@
-import { Box, Link, Flex, Image, useMediaQuery } from "@chakra-ui/react";
+import { Box, Link, Flex, useMediaQuery } from "@chakra-ui/react";
 import Navlink from "./Navlink";
 import Switch from "./Switch";
 import Dropdown from "./Dropdown";
 import NextLink from "next/link";
+import Image from "next/image";
 
 export default function Navigation(): JSX.Element {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -18,12 +19,7 @@ export default function Navigation(): JSX.Element {
       <Flex maxW="container.md" align="center" mx="auto">
         <NextLink href="/" passHref>
           <Link mr={3}>
-            <Image
-              borderRadius="full"
-              boxSize="50px"
-              src="/images/avatar.png"
-              ml={4}
-            />
+            <Image width="60px" height="60px" src="/images/avatar.png" />
           </Link>
         </NextLink>
         <Flex marginLeft="auto">
