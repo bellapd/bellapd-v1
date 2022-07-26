@@ -3,7 +3,14 @@ import path from "path";
 import matter from "gray-matter";
 import Posts from "../components/Posts";
 import Layout from "../components/Layout";
-import { Heading, VStack, Stack, Text, Divider } from "@chakra-ui/react";
+import {
+  Heading,
+  VStack,
+  Stack,
+  Text,
+  Divider,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
 import { DateTime } from "luxon";
 import Readall from "../components/Readall";
@@ -12,8 +19,8 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
   return (
     <Layout>
       <VStack align={"left"} mb={5}>
-        <Heading fontSize="35px">
-          <mark>Annabella</mark>
+        <Heading as="h1" size="xl" color={useColorModeValue("dark", "light")}>
+          Annabella
         </Heading>
         <Text fontSize="15px">
           an undergraduate computer science student at{" "}

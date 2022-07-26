@@ -1,4 +1,10 @@
-import { Heading, Text, Stack, Divider, VStack } from "@chakra-ui/react";
+import {
+  Heading,
+  Text,
+  Stack,
+  useColorModeValue,
+  VStack,
+} from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Layout from "../components/Layout";
 import Milestone from "../components/Milestone";
@@ -8,7 +14,7 @@ const About: NextPage = () => {
   return (
     <Layout>
       <Stack align="Left">
-        <Heading as="h1" size="xl">
+        <Heading as="h1" size="xl" color={useColorModeValue("dark", "light")}>
           Hi There 👋🏼
         </Heading>
       </Stack>

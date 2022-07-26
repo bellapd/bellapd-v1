@@ -12,6 +12,7 @@ import {
   CloseButton,
   Text,
   VStack,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Layout from "../components/Layout";
 import type { IPost } from "../types/post.type";
@@ -34,8 +35,8 @@ export default function Blog({ posts }: { posts: IPost[] }): JSX.Element {
   return (
     <Layout>
       <VStack align="left">
-        <Heading fontSize="40px">
-          <mark>Blog</mark>
+        <Heading as="h1" size="xl" color={useColorModeValue("dark", "light")}>
+          Blog
         </Heading>
         <Text fontSize="15px">
           I'm actively blogging about <strong>backend</strong> and{" "}

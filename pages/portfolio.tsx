@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Layout from "../components/Layout";
 import Posts from "./../components/Posts";
-import { Text, Heading, VStack } from "@chakra-ui/react";
+import { Text, Heading, VStack, useColorModeValue } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
 
 export default function Portfolio({
@@ -14,8 +14,8 @@ export default function Portfolio({
   return (
     <Layout>
       <VStack align="left">
-        <Heading fontSize="40px" pr={6}>
-          <mark>Portfolio</mark>
+        <Heading as="h1" size="xl" color={useColorModeValue("dark", "light")}>
+          Portfolio
         </Heading>
         <Text fontSize="15px">Here is some projects that I have done</Text>
       </VStack>
