@@ -17,9 +17,14 @@ export default function Navigation(): JSX.Element {
       as="nav"
     >
       <Flex maxW="container.md" align="center" mx="auto">
-        <NextLink href="/" passHref>
-          <Link mr={3}>
-            <Image width="50px" height="50px" src="/images/avatar.png" />
+        <NextLink href="/">
+          <Link ml={4}>
+            <Image
+              width="60px"
+              height="60px"
+              alt="avatar"
+              src="/images/avatar.png"
+            />
           </Link>
         </NextLink>
         <Flex marginLeft="auto">
