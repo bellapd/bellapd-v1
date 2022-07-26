@@ -29,7 +29,7 @@ export default function Posts({
               transition: "all 0.3s ease-in-out",
             }}
           >
-            <Text fontSize="sm" as="i" color="gray.500">
+            <Text fontSize="sm" as="i" color="gray.700">
               {post.frontMatter.date} - {post.frontMatter.readingTime} reading
             </Text>
             <NextLink href={"/" + type + "/" + post.slug} passHref>
@@ -39,13 +39,13 @@ export default function Posts({
             </NextLink>
             {post.frontMatter.tags ? (
               <>
-                <Text as="p" my={5} color="gray.500">
+                <Text as="p" my={5} color="gray.700">
                   {post.frontMatter.description}
                 </Text>
                 <Tags tags={post.frontMatter.tags} />
               </>
             ) : (
-              <Text as="p" mt={5} color="gray.500">
+              <Text as="p" mt={5} color="gray.700">
                 {post.frontMatter.description}
               </Text>
             )}
