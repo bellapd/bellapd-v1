@@ -22,6 +22,7 @@ export default function Navigation(): JSX.Element {
               borderRadius="full"
               boxSize="50px"
               src="/images/avatar.png"
+              ml={4}
             />
           </Link>
         </NextLink>
