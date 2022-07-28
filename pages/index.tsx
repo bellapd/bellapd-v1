@@ -24,14 +24,14 @@ const ANIMATION_DURATION = 0.5;
 
 export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
   const color = "pink.400";
-
+  const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <Layout>
       <Dottedbox />
       <Container>
         <Flex
           direction={["column", "column", "row"]}
-          display={{ base: "none", md: "flex" }}
+          display={{ base: "flex", md: "flex" }}
         >
           <MotionBox
             opacity="0"
