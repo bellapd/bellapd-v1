@@ -1,8 +1,7 @@
-import { Box, Link, Flex, Image, useMediaQuery } from "@chakra-ui/react";
+import { Box, Flex, useMediaQuery } from "@chakra-ui/react";
 import Navlink from "./Navlink";
 import Switch from "./Switch";
 import Dropdown from "./Dropdown";
-import NextLink from "next/link";
 
 export default function Navigation(): JSX.Element {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
