@@ -16,6 +16,8 @@ const Navlink = ({
         rounded="full"
         _hover={{
           textDecoration: "underline",
+          textDecorationColor: "pink.400",
+          transition: "all 0.3s ease-in-out",
         }}
       >
         {children}

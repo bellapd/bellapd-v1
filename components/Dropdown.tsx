@@ -23,16 +23,21 @@ const MenuContainer = () => {
 const dropdownLinks = [
   {
     id: "01",
+    name: "Home",
+    path: "/",
+  },
+  {
+    id: "02",
     name: "About",
     path: "/about",
   },
   {
-    id: "02",
+    id: "03",
     name: "Blog",
     path: "/blog",
   },
   {
-    id: "03",
+    id: "04",
     name: "Portfolio",
     path: "/portfolio",
   },

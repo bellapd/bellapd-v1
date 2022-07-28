@@ -16,29 +16,22 @@ export default function Navigation(): JSX.Element {
       as="nav"
     >
       <Flex maxW="container.md" align="center" mx="auto">
-        <NextLink href="/">
-          <Link ml={4}>
-            <Image
-              width="60px"
-              height="60px"
-              alt="avatar"
-              src="/images/avatar.png"
-            />
-          </Link>
-        </NextLink>
         <Flex marginLeft="auto">
           {isMobile ? (
             <Dropdown />
           ) : (
             <Flex display={{ base: "none", md: "flex" }}>
+              <Navlink href="/">
+                <strong>01 </strong> Home
+              </Navlink>
               <Navlink href="/about">
-                <strong>01</strong> About
+                <strong>02 </strong> About
               </Navlink>
               <Navlink href="/blog">
-                <strong>02 </strong> Blog
+                <strong>03 </strong> Blog
               </Navlink>
               <Navlink href="/portfolio">
-                <strong>03 </strong> Portfolio
+                <strong>04 </strong> Portfolio
               </Navlink>
             </Flex>
           )}
