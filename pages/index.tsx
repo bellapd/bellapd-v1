@@ -87,10 +87,10 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
               </Box>{" "}
               and I&apos;m a{" "}
               <Box as="span" whiteSpace="nowrap">
-                Full time Student and
+                Full Time Student and
               </Box>{" "}
               <Box as="span" whiteSpace="nowrap">
-                an long time learner 👩🏻‍💻
+                an Long Time Learner 👩🏻‍💻
               </Box>
             </Box>
             <Box
