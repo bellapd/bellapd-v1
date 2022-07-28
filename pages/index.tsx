@@ -20,7 +20,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
   return (
     <Layout>
       <Dottedbox />
-      <Container maxW="5xl" p={{ base: 5, md: 12 }}>
+      <Container maxW="xl" p={{ base: 5, md: 12 }}>
         <Flex direction={["column", "column", "row"]}>
           <MotionBox
             opacity="0"
@@ -52,7 +52,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
             ml={["auto", "auto", 16]}
             m={["auto", "initial"]}
             w={["90%", "85%", "80%"]}
-            maxW="800px"
+            maxW="500px"
             opacity="0"
             justify="center"
             direction="column"
@@ -105,16 +105,16 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
             </Box>
           </MotionFlex>
         </Flex>
+
+        <Stack align={"left"} pt={5}>
+          <Text as="b" fontSize="xl" pb={2}>
+            Recent posts
+          </Text>
+
+          <Posts posts={posts} type="blog" />
+          <Readall />
+        </Stack>
       </Container>
-
-      <Stack align={"left"} pt={5}>
-        <Text as="b" fontSize="xl" pb={2}>
-          Recent posts
-        </Text>
-
-        <Posts posts={posts} type="blog" />
-        <Readall />
-      </Stack>
     </Layout>
   );
 }
