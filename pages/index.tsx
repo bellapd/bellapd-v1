@@ -28,7 +28,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
   return (
     <Layout>
       <Dottedbox />
-      <Container maxW="container.md">
+      <Container>
         <Flex
           direction={["column", "column", "row"]}
           display={{ base: "none", md: "flex" }}
