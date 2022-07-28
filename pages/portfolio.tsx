@@ -3,8 +3,9 @@ import path from "path";
 import matter from "gray-matter";
 import Layout from "../components/Layout";
 import Posts from "./../components/Posts";
-import { Text, Heading, VStack, useColorModeValue } from "@chakra-ui/react";
+import { Text, Heading, VStack, Box } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
+import Dottedbox from "../components/Dottedbox";
 
 export default function Portfolio({
   portfolios,
@@ -13,11 +14,14 @@ export default function Portfolio({
 }): JSX.Element {
   return (
     <Layout>
-      <VStack align="left">
-        <Heading as="h1" size="xl" color={useColorModeValue("dark", "light")}>
-          Portfolio
-        </Heading>
-        <Text fontSize="15px">Here is some projects that I have done</Text>
+      <Dottedbox />
+      <VStack>
+        <Box textAlign="center">
+          <Heading fontSize="3xl" mb={3}>
+            Portfolio
+          </Heading>
+          <Text>Here is some projects that I have done!</Text>
+        </Box>
       </VStack>
       <Posts posts={portfolios} type="portfolio" />
     </Layout>

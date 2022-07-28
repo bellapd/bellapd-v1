@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { DateTime } from "luxon";
 import {
   FormControl,
-  Heading,
+  Box,
   Input,
   InputGroup,
   InputLeftElement,
@@ -12,13 +12,14 @@ import {
   CloseButton,
   Text,
   VStack,
-  useColorModeValue,
+  Heading,
 } from "@chakra-ui/react";
 import Layout from "../components/Layout";
 import type { IPost } from "../types/post.type";
 import Posts from "../components/Posts";
 import { useMemo, useState } from "react";
 import { FiSearch } from "react-icons/fi";
+import Dottedbox from "../components/Dottedbox";
 
 export default function Blog({ posts }: { posts: IPost[] }): JSX.Element {
   const [search, setSearch] = useState("");
@@ -34,16 +35,20 @@ export default function Blog({ posts }: { posts: IPost[] }): JSX.Element {
 
   return (
     <Layout>
-      <VStack align="left">
-        <Heading as="h1" size="xl" color={useColorModeValue("dark", "light")}>
-          Blog
-        </Heading>
-        <Text fontSize="15px">
-          I'm actively blogging about <strong>backend</strong> and{" "}
-          <strong>frontend</strong> development. Check out the most recent
-          discoveries!
-        </Text>
+      <Dottedbox />
+      <VStack>
+        <Box textAlign="center">
+          <Heading fontSize="3xl" mb={3}>
+            Blog
+          </Heading>
+          <Text>
+            I'm actively blogging about <strong>backend</strong> and{" "}
+            <strong>frontend</strong> development. Check out the most recent
+            discoveries!
+          </Text>
+        </Box>
       </VStack>
+
       <FormControl mt={5}>
         <InputGroup>
           <InputLeftElement
