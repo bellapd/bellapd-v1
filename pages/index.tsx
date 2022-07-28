@@ -4,7 +4,15 @@ import matter from "gray-matter";
 import Posts from "../components/Posts";
 import Layout from "../components/Layout";
 import * as React from "react";
-import { Flex, Avatar, Box, Container, Stack, Text } from "@chakra-ui/react";
+import {
+  Flex,
+  Avatar,
+  Box,
+  Container,
+  Stack,
+  Text,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import { MotionBox, MotionFlex } from "../components/Motion";
 import Header from "../components/Header";
 import type { IPost } from "../types/post.type";
@@ -20,8 +28,11 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
   return (
     <Layout>
       <Dottedbox />
-      <Container maxW="xl" p={{ base: 5, md: 12 }}>
-        <Flex direction={["column", "column", "row"]}>
+      <Container maxW="container.md">
+        <Flex
+          direction={["column", "column", "row"]}
+          display={{ base: "none", md: "flex" }}
+        >
           <MotionBox
             opacity="0"
             initial={{
@@ -105,16 +116,16 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
             </Box>
           </MotionFlex>
         </Flex>
-
-        <Stack align={"left"} pt={5}>
-          <Text as="b" fontSize="xl" pb={2}>
-            Recent posts
-          </Text>
-
-          <Posts posts={posts} type="blog" />
-          <Readall />
-        </Stack>
       </Container>
+
+      <Stack align={"left"} pt={5}>
+        <Text as="b" fontSize="xl" pb={2}>
+          Recent posts
+        </Text>
+
+        <Posts posts={posts} type="blog" />
+        <Readall />
+      </Stack>
     </Layout>
   );
 }
