@@ -81,16 +81,16 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
               </MotionBox>
             </Box>
             <Box as="h2" fontSize="2xl" fontWeight="400" textAlign="left">
-              I'm{" "}
+              My name is{" "}
               <Box as="strong" fontWeight="600">
                 Bella
               </Box>{" "}
               and I&apos;m a{" "}
               <Box as="span" whiteSpace="nowrap">
-                Full-time computer science undergraduate
-              </Box>
+                Full time Student and
+              </Box>{" "}
               <Box as="span" whiteSpace="nowrap">
-                student and a long time learner
+                an long time learner 👩🏻‍💻
               </Box>
             </Box>
             <Box
@@ -101,7 +101,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
               textAlign="left"
             >
               I write about the things I&apos;m working on and share what
-              I&apos;ve learned 😊
+              I&apos;ve learned 🥸
             </Box>
           </MotionFlex>
         </Flex>
