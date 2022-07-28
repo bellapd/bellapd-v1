@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import Layout from "../components/Layout";
 import Milestone from "../components/Milestone";
 import Skills from "../components/Skillset";
-import Profileheading from "../components/Profileheading";
+import Profileheading from "../components/Aboutmeheading";
 
 const About: NextPage = () => {
   return (
