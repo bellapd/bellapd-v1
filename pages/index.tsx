@@ -18,7 +18,6 @@ import Header from "../components/Header";
 import type { IPost } from "../types/post.type";
 import { DateTime } from "luxon";
 import Readall from "../components/Readall";
-import Dottedbox from "../components/Dottedbox";
 
 const ANIMATION_DURATION = 0.5;
 
@@ -27,10 +26,9 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
 
   return (
     <Layout>
-      <Dottedbox />
-      <Container>
+      <Container maxW="2xl">
         <Flex
-          p={{ base: 4, md: 14 }}
+          p={{ base: 2, md: 13 }}
           w="100%"
           direction={{ base: "column", md: "row" }}
         >
