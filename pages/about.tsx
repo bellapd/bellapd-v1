@@ -1,7 +1,6 @@
 import {
   VStack,
   Text,
-  HStack,
   Avatar,
   Box,
   Container,
@@ -11,7 +10,6 @@ import type { NextPage } from "next";
 import Layout from "../components/Layout";
 import Milestone from "../components/Milestone";
 import Skills from "../components/Skillset";
-import Dottedbox from "../components/Dottedbox";
 
 interface TestimonialAttributes {
   username: string;
@@ -30,7 +28,6 @@ const About: NextPage = () => {
     <Layout>
       <VStack align="right" direction="row">
         <Container maxW="2xl" p={5}>
-          <Dottedbox />
           <VStack spacing={3}>
             <VStack alignItems="center">
               <Avatar name="avatar" src={testimonial.image} size="lg" />

@@ -19,7 +19,6 @@ import type { IPost } from "../types/post.type";
 import Posts from "../components/Posts";
 import { useMemo, useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import Dottedbox from "../components/Dottedbox";
 
 export default function Blog({ posts }: { posts: IPost[] }): JSX.Element {
   const [search, setSearch] = useState("");
@@ -35,7 +34,6 @@ export default function Blog({ posts }: { posts: IPost[] }): JSX.Element {
 
   return (
     <Layout>
-      <Dottedbox />
       <VStack>
         <Box textAlign="center">
           <Heading fontSize="3xl" mb={3}>

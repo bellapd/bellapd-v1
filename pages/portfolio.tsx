@@ -5,7 +5,6 @@ import Layout from "../components/Layout";
 import Posts from "./../components/Posts";
 import { Text, Heading, VStack, Box } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
-import Dottedbox from "../components/Dottedbox";
 
 export default function Portfolio({
   portfolios,
@@ -14,7 +13,6 @@ export default function Portfolio({
 }): JSX.Element {
   return (
     <Layout>
-      <Dottedbox />
       <VStack>
         <Box textAlign="center">
           <Heading fontSize="3xl" mb={3}>
