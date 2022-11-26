@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import Layout from "../components/Layout";
-import Posts from "./../components/Posts";
+import Layout from "../components/Main/Layout";
+import Posts from "../components/Posts/RelatedPosts";
 import { Text, Heading, VStack, Box } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
 
@@ -13,12 +13,16 @@ export default function Portfolio({
 }): JSX.Element {
   return (
     <Layout>
-      <VStack>
-        <Box textAlign="center">
-          <Heading fontSize="3xl" mb={3}>
+      <VStack spacing="5rem" align="left">
+        <Box
+          mt="5rem"
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+        >
+          <Heading as="h1" fontSize="4rem" fontWeight="700">
             Portfolio
           </Heading>
-          <Text>Here is some projects that I have done!</Text>
         </Box>
       </VStack>
       <Posts posts={portfolios} type="portfolio" />
