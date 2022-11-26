@@ -1,9 +1,9 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import Layout from "../../components/Layout";
+import Layout from "../../components/Main/Layout";
 import { Flex, Heading, Text } from "@chakra-ui/react";
-import Posts from "../../components/Posts";
+import Posts from "../../components/Posts/RelatedPosts";
 import type { IPost } from "../../types/post.type";
 
 function Tag({ posts, tag }: { posts: IPost[]; tag: string }) {
@@ -22,20 +22,20 @@ function Tag({ posts, tag }: { posts: IPost[]; tag: string }) {
           <Text as="p">{tag}</Text>
         </Flex>
       </Heading>
-      <Posts posts={posts} type="blog" />
+      <Posts posts={posts} type="posts" />
     </Layout>
   );
 }
 
 const getStaticPaths = async () => {
-  const folders = fs.readdirSync(path.join("content", "blogs"));
+  const folders = fs.readdirSync(path.join("content", "posts"));
 
   const obj: Record<string, boolean> = {};
 
   // get all tags from all posts
   folders.forEach((slug) => {
     const content = fs.readFileSync(
-      path.join("content", "blogs", slug, "index.mdx"),
+      path.join("content", "posts", slug, "index.mdx"),
       "utf8"
     );
     const { data: frontMatter } = matter(content);
@@ -53,12 +53,12 @@ const getStaticPaths = async () => {
 
 const getStaticProps = async ({ params: { tag } }: any) => {
   // get all folders' in content/portfolios
-  const folders = fs.readdirSync(path.join("content", "blogs"));
+  const folders = fs.readdirSync(path.join("content", "posts"));
 
   // get all posts' front matter with a specific tag
   const filtered = folders.map((slug) => {
     const content = fs.readFileSync(
-      path.join("content", "blogs", slug, "index.mdx"),
+      path.join("content", "posts", slug, "index.mdx"),
       "utf-8"
     );
     const { data: frontMatter } = matter(content);

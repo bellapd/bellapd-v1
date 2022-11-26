@@ -5,7 +5,7 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
 // components
-import Authors from "../../components/Posts/Authors";
+import Tags from "../../components/Main/Tags";
 import Layout from "../../components/Main/Layout";
 import MDXComponents from "../../components/Posts/MDXcomponents";
 
@@ -20,28 +20,29 @@ import remarkMath from "remark-math";
 import rehypeSlug from "rehype-slug";
 import rehypeKatex from "rehype-katex";
 import rehypePrismPlus from "rehype-prism-plus";
-import rehypePrismDiff from "rehype-prism-diff";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrismDiff from "rehype-prism-diff";
 
-export default function Portfolio({ mdxSource }: IMdxPage) {
+// infer mdxSource parameter type hint
+export default function Posts({ mdxSource }: IMdxPage) {
   return (
     <Layout>
-      <Text fontSize="sm" color="gray.500">
+      <Text fontSize="sm" color="gray.500" mt="5rem">
         {mdxSource.frontmatter.date} - {mdxSource.frontmatter.readingTime}{" "}
         reading
       </Text>
       <Heading as="h1" size="3xl" my={5}>
         {mdxSource.frontmatter.title}
       </Heading>
-      <Authors authors={mdxSource.frontmatter.authors} />
+      {/* <Tags tags={mdxSource.frontmatter.tags} /> */}
       <MDXRemote {...mdxSource} components={MDXComponents} />
     </Layout>
   );
 }
 
 export const getStaticPaths = async () => {
-  const folders = fs.readdirSync(path.join("content", "portfolios"));
+  const folders = fs.readdirSync(path.join("content", "posts"));
 
   const paths = folders.map((name) => ({
     params: {
@@ -55,13 +56,14 @@ export const getStaticPaths = async () => {
   };
 };
 
+// slug is the id of the post, which is a string
 export const getStaticProps = async ({
   params: { slug },
 }: {
   params: { slug: string };
 }) => {
   const source = fs.readFileSync(
-    path.join("content", "portfolios", slug, "index.mdx"),
+    path.join("content", "posts", slug, "index.mdx"),
     "utf-8"
   );
 

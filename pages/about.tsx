@@ -7,9 +7,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
-import Layout from "../components/Layout";
-import Milestone from "../components/Milestone";
-import Skills from "../components/Skillset";
+import Layout from "../components/Main/Layout";
+import Milestone from "../components/About/Milestone";
+import Skills from "../components/About/Skillset";
 
 interface TestimonialAttributes {
   username: string;
@@ -28,22 +28,15 @@ const About: NextPage = () => {
     <Layout>
       <VStack align="right" direction="row">
         <Container maxW="2xl" p={5}>
-          <VStack spacing={3}>
-            <VStack alignItems="center">
-              <Avatar name="avatar" src={testimonial.image} size="lg" />
-              <Box textAlign="center">
-                <Text fontWeight="bold" fontSize="lg">
-                  {testimonial.username}
-                </Text>
-                <Text
-                  p={5}
-                  color={useColorModeValue("gray.600", "gray.300")}
-                  zIndex={5}
-                >
-                  {testimonial.content}
-                </Text>
-              </Box>
-            </VStack>
+          <VStack alignItems="center">
+            <Box textAlign="center" mt="3rem">
+              <Text fontSize="5xl" fontWeight="bold">
+                {testimonial.username}
+              </Text>
+              <Text p={5} color="gray.700" zIndex={5}>
+                {testimonial.content}
+              </Text>
+            </Box>
           </VStack>
         </Container>
       </VStack>
