@@ -107,10 +107,7 @@ export default function RelatedPosts({
   return (
     <>
       {posts.length > 0 && (
-        <Box>
-          <Heading as="h1" fontSize="4xl" mt={10} mb="1rem">
-            Related Posts
-          </Heading>
+        <Box mt={8}>
           <Cards posts={posts} type={type} />
         </Box>
       )}
