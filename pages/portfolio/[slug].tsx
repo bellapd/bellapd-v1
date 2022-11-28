@@ -41,7 +41,7 @@ export default function Portfolio({ mdxSource }: IMdxPage) {
 }
 
 export const getStaticPaths = async () => {
-  const folders = fs.readdirSync(path.join("content", "portfolios"));
+  const folders = fs.readdirSync(path.join("content", "portfolio"));
 
   const paths = folders.map((name) => ({
     params: {
@@ -61,7 +61,7 @@ export const getStaticProps = async ({
   params: { slug: string };
 }) => {
   const source = fs.readFileSync(
-    path.join("content", "portfolios", slug, "index.mdx"),
+    path.join("content", "portfolio", slug, "index.mdx"),
     "utf-8"
   );
 

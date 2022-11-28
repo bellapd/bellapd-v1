@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Layout from "../components/Main/Layout";
 import Posts from "../components/Posts/RelatedPosts";
-import { Text, Heading, VStack, Box } from "@chakra-ui/react";
+import { Heading, VStack, Box } from "@chakra-ui/react";
 import type { IPost } from "../types/post.type";
 
 export default function Portfolio({
@@ -33,13 +33,13 @@ export default function Portfolio({
 export const getStaticProps = async () => {
   // get all folders' in content/portfolios
   const folders = fs.readdirSync(
-    path.join(process.cwd(), "content", "portfolios")
+    path.join(process.cwd(), "content", "portfolio")
   );
 
   // iterate through all the folders
   const portfolios = folders.map((slug) => {
     const content = fs.readFileSync(
-      path.join("content", "portfolios", slug, "index.mdx"),
+      path.join("content", "portfolio", slug, "index.mdx"),
       "utf-8"
     );
     const { data: frontMatter } = matter(content);
