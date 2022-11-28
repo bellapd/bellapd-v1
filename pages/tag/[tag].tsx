@@ -52,7 +52,7 @@ const getStaticPaths = async () => {
 };
 
 const getStaticProps = async ({ params: { tag } }: any) => {
-  // get all folders' in content/portfolios
+  // get all folders' in content/portfolio
   const folders = fs.readdirSync(path.join("content", "posts"));
 
   // get all posts' front matter with a specific tag
