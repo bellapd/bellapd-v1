@@ -1,11 +1,4 @@
-import {
-  VStack,
-  Text,
-  Avatar,
-  Box,
-  Container,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { VStack, Text, Button, Box, Container } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Layout from "../components/Main/Layout";
 import Milestone from "../components/About/Milestone";
@@ -36,6 +29,19 @@ const About: NextPage = () => {
               <Text p={5} color="gray.700" zIndex={5}>
                 {testimonial.content}
               </Text>
+              <Button
+                colorScheme="red"
+                size="md"
+                mt={4}
+                onClick={() => {
+                  window.open(
+                    "https://drive.google.com/file/d/16dZNSCPfkM1Z9jcgkdZhan7I34dlK_Pn/view?usp=sharing",
+                    "_blank"
+                  );
+                }}
+              >
+                Download CV
+              </Button>
             </Box>
           </VStack>
         </Container>
