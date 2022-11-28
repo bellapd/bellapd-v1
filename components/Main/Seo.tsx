@@ -16,7 +16,7 @@ export default function Seo({
   const meta = {
     author: "Annabella Putri DIrgo",
     description: "A Web Developer's Posts",
-    avatar: "public/images/avatar.png",
+    avatar: "https://avatars.githubusercontent.com/u/95697403?v=4",
   };
   const titleWithAuthor = title + " - " + meta.author;
   return (
