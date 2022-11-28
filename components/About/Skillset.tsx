@@ -96,7 +96,7 @@ const Skills = () => {
             }}
             _hover={{
               border: `2px solid`,
-              borderColor: "gray.700",
+              borderColor: "red.500",
               boxShadow: "black.800",
               transition: "all 0.3s ease-in-out",
             }}
@@ -105,7 +105,7 @@ const Skills = () => {
               p={2}
               w="max-content"
               color="white"
-              bg="gray.700"
+              bg="red.500"
               rounded="md"
               marginInline="auto"
               pos="absolute"
