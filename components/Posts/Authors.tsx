@@ -20,16 +20,16 @@ export default function Authors(props: any): JSX.Element {
     {
       name: "Bijon Setyawan Raya",
       image: "https://bsraya.com/images/avatar.png",
-      url: "/",
+      url: "https://www.bsraya.com",
     },
     {
       name: "Annabella Putri Dirgo",
-      image: "./images/avatar.png",
-      url: "https://bellapd.vercel.app",
+      image: "https://avatars.githubusercontent.com/u/95697403?v=4",
+      url: "/",
     },
     {
       name: "Marcelino Gilbert Tagore",
-      image: "",
+      image: "https://avatars.githubusercontent.com/u/87357390?v=4",
       url: "https://marcelinogilbertt.vercel.app",
     },
   ];
