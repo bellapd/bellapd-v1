@@ -23,13 +23,12 @@ export default function Navlink({
   return (
     <NextLink href={href}>
       <Link
-        px={3}
-        py={2}
-        rounded="full"
-        ml="5"
-        _hover={{
-          textDecoration: "none",
-        }}
+        variant="ghost"
+        color={isActive ? "gray.800" : "gray.300"}
+        _hover={{ color: "gray.800" }}
+        _active={{ color: "gray.800" }}
+        letterSpacing="2px"
+        ml="2rem"
       >
         {children}
       </Link>
