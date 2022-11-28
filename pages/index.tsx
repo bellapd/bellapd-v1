@@ -19,6 +19,7 @@ import Seo from "../components/Main/Seo";
 import Layout from "../components/Main/Layout";
 import Footer from "../components/Main/Footer";
 import Readall from "../components/Main/Readall";
+import Spotify from "../components/Spotify/NowPlaying";
 
 export default function Home({ posts }: { posts: Post[] }): JSX.Element {
   const isDesktop = useBreakpointValue({ base: false, md: true });
@@ -45,20 +46,25 @@ export default function Home({ posts }: { posts: Post[] }): JSX.Element {
             </VStack>
             <Footer />
           </Box>
-
           <Box>
             <Heading as="h2" fontSize="2rem" fontWeight="700">
               Featured Posts
             </Heading>
-            <SimpleGrid columns={isDesktop ? 3 : 1} spacing="10" mt="5">
+            <SimpleGrid columns={isDesktop ? 2 : 1} spacing="10" mt="5">
               {posts.map((post) => (
                 <LinkBox as="article" key={post.slug}>
                   <Box
                     key={post.slug}
                     boxShadow="2xl"
-                    p="7"
-                    w="12rem"
+                    p="5"
+                    w="17rem"
+                    h="17rem"
                     rounded="lg"
+                    _hover={{
+                      // pop up effect
+                      transform: "translateY(-5px)",
+                      transition: "all 0.2s ease-in-out",
+                    }}
                   >
                     <Heading as="h3" fontSize="2rem" my={1}>
                       <LinkOverlay
@@ -91,6 +97,7 @@ export default function Home({ posts }: { posts: Post[] }): JSX.Element {
               ))}
             </SimpleGrid>
             <Readall />
+            <Spotify />
           </Box>
         </VStack>
       </Container>
