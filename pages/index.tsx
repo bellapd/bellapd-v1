@@ -57,8 +57,9 @@ export default function Home({ posts }: { posts: Post[] }): JSX.Element {
                     key={post.slug}
                     boxShadow="2xl"
                     p="5"
-                    w="17rem"
-                    h="17rem"
+                    // make all have the same width and height
+                    h="100%"
+                    w="100%"
                     rounded="lg"
                     _hover={{
                       // pop up effect
