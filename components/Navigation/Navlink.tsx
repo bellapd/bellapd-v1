@@ -27,7 +27,6 @@ export default function Navlink({
         color={isActive ? "gray.800" : "gray.300"}
         _hover={{ color: "gray.800" }}
         _active={{ color: "gray.800" }}
-        letterSpacing="2px"
         ml="2rem"
       >
         {children}
