@@ -27,10 +27,15 @@ export default function Posts({
           <LinkBox
             as="article"
             my={5}
-            rounded="md"
             key={post.slug}
             p={5}
-            mb="3rem"
+            boxShadow="2xl"
+            rounded="lg"
+            _hover={{
+              // pop up effect
+              transform: "translateY(-5px)",
+              transition: "all 0.2s ease-in-out",
+            }}
           >
             <NextLink href={"/" + type + "/" + post.slug} passHref>
               <LinkOverlay fontStyle="normal">
@@ -41,18 +46,7 @@ export default function Posts({
                     )}
                   </Text>
                   {post.frontMatter.series && (
-                    <Box
-                      boxShadow="2xl"
-                      p="5"
-                      w="17rem"
-                      h="17rem"
-                      rounded="lg"
-                      _hover={{
-                        // pop up effect
-                        transform: "translateY(-5px)",
-                        transition: "all 0.2s ease-in-out",
-                      }}
-                    >
+                    <Box boxShadow="2xl" p="5" w="17rem" h="17rem" rounded="lg">
                       <Text
                         m="auto"
                         fontSize="sm"

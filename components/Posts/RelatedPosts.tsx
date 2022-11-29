@@ -18,24 +18,21 @@ function Cards({ posts, type }: { posts: Post[]; type: string }) {
   const padding = isDesktop ? "3" : "2";
   const bgColor = useColorModeValue("white", "gray.600");
   return (
-    <Stack spacing={5} direction={isDesktop ? "row" : "column"}>
+    <Stack spacing={5} direction={isDesktop ? "column" : "column"}>
       {posts.map((post) => (
         <LinkBox
           as="article"
+          my={5}
           key={post.slug}
-          borderRadius="md"
-          p={5}
-          width="100%"
-          bg={bgColor}
-          boxShadow="5px 5px 0px rgba(0, 0, 0, 0.1)"
-          _dark={{
-            boxShadow: "5px 5px 0px rgba(255, 255, 255, 0.1)",
-            "&:hover": {
-              bg: "gray.500",
-            },
-          }}
+          p={7}
+          boxShadow="2xl"
+          rounded="lg"
+          w="50rem"
+          h="8rem"
           _hover={{
-            bg: "gray.50",
+            // pop up effect
+            transform: "translateY(-5px)",
+            transition: "all 0.2s ease-in-out",
           }}
         >
           <NextLink href={"/" + type + "/" + post.slug} passHref>
