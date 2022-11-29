@@ -10,7 +10,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <>
       <Box as="main">
-        <Container my={10} maxWidth="container.sm">
+        <Container my={10} maxWidth="container.md">
           <Navbar />
           <Global styles={[prismStyles, katexStyles]} />
           {children}
