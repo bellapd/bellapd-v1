@@ -36,7 +36,7 @@ const CustomLink = (props: any) => {
       <NextLink {...props} href={href} passHref>
         <Link
           {...props}
-          color="dark"
+          color="red.600"
           _dark={{
             color: "light",
           }}
@@ -190,7 +190,7 @@ const DocsHeading = (props: any) => {
           <Box
             aria-label="anchor"
             as="a"
-            color="dark"
+            color="red.600"
             _dark={{
               color: "light",
             }}
