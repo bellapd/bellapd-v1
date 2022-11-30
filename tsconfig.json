@@ -25,7 +25,8 @@
     "lib/spotify.js",
     "lib/spotify.js",
     "lib/spotify.js",
-    "pages/api/spotify.js"
+    "pages/api/spotify.tsx",
+    "components/Spotify/NowPlaying.tsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -46,4 +46,4 @@ yarn-error.log*
 /public/worker-*.js.map
 /public/fallback-*.js
 
-.env.example
+.env.local
