@@ -27,7 +27,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 export default function Portfolio({ mdxSource }: IMdxPage) {
   return (
     <Layout>
-      <Text fontSize="sm" color="gray.500">
+      <Text fontSize="sm" color="gray.500" mt="5rem">
         {mdxSource.frontmatter.date} - {mdxSource.frontmatter.readingTime}{" "}
         reading
       </Text>
