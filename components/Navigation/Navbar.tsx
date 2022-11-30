@@ -1,7 +1,9 @@
-import { Center, Flex, Box, useBreakpointValue, Image } from "@chakra-ui/react";
+import { Flex, Box, useBreakpointValue, Icon } from "@chakra-ui/react";
 import Navlink from "./Navlink";
 import Dropdown from "./Dropdown";
-import Link from "next/link";
+import { RiHome4Fill } from "react-icons/ri";
+import { BsPersonLinesFill, BsFillFilePostFill } from "react-icons/bs";
+import { SiApostrophe } from "react-icons/si";
 
 export default function Navigation(): JSX.Element {
   const isDesktop = useBreakpointValue({ base: false, md: true });
@@ -11,10 +13,18 @@ export default function Navigation(): JSX.Element {
         {" "}
         {isDesktop ? (
           <>
-            <Navlink href="/">Home</Navlink>
-            <Navlink href="/about">About</Navlink>
-            <Navlink href="/posts">Posts</Navlink>
-            <Navlink href="/portfolio">Portfolio</Navlink>
+            <Navlink href="/">
+              <Icon as={RiHome4Fill}></Icon>Home
+            </Navlink>
+            <Navlink href="/about">
+              <Icon as={BsPersonLinesFill}></Icon>About
+            </Navlink>
+            <Navlink href="/posts">
+              <Icon as={BsFillFilePostFill}></Icon>Posts
+            </Navlink>
+            <Navlink href="/portfolio">
+              <Icon as={SiApostrophe}></Icon>Portfolio
+            </Navlink>
           </>
         ) : (
           <>

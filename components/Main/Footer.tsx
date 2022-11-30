@@ -1,5 +1,6 @@
 import { Flex, Link, IconButton } from "@chakra-ui/react";
 import { RiGithubFill, RiLinkedinFill, RiMailFill } from "react-icons/ri";
+import { IoIosPaper } from "react-icons/io";
 
 export default function Footer(): JSX.Element {
   const size = "1.5rem";
@@ -18,6 +19,11 @@ export default function Footer(): JSX.Element {
       key: "email",
       icon: <RiMailFill style={{ fontSize: size }} />,
       url: "mailto:annabellaputridirgo@gmail.com",
+    },
+    {
+      key: "resume",
+      icon: <IoIosPaper style={{ fontSize: size }} />,
+      url: "https://drive.google.com/file/d/16dZNSCPfkM1Z9jcgkdZhan7I34dlK_Pn/view?usp=sharing",
     },
   ];
 
