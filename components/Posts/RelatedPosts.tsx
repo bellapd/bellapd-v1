@@ -3,32 +3,29 @@ import type { Post } from "../../lib/types";
 import {
   Box,
   Text,
-  Stack,
   HStack,
   LinkBox,
   Heading,
   LinkOverlay,
-  useColorModeValue,
   useBreakpointValue,
+  SimpleGrid,
 } from "@chakra-ui/react";
 
 function Cards({ posts, type }: { posts: Post[]; type: string }) {
   const isDesktop = useBreakpointValue({ base: false, md: true });
   const fontSize = isDesktop ? "md" : "sm";
   const padding = isDesktop ? "3" : "2";
-  const bgColor = useColorModeValue("white", "gray.600");
+
   return (
-    <Stack spacing={5} direction={isDesktop ? "column" : "column"}>
+    <SimpleGrid columns={isDesktop ? 2 : 1} spacing="10" mt="5">
       {posts.map((post) => (
         <LinkBox
           as="article"
-          my={5}
           key={post.slug}
-          p={7}
+          my={5}
+          p={5}
           boxShadow="2xl"
           rounded="lg"
-          w="50rem"
-          h="8rem"
           _hover={{
             // pop up effect
             transform: "translateY(-5px)",
@@ -90,7 +87,7 @@ function Cards({ posts, type }: { posts: Post[]; type: string }) {
           </NextLink>
         </LinkBox>
       ))}
-    </Stack>
+    </SimpleGrid>
   );
 }
 
