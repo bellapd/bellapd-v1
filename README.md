@@ -1,4 +1,4 @@
-<h3>Hey 👋<br>I'm Bella<br>an Electrical Engineering and Computer Science Student and here is my first version of my personal website
+<h3>Hey 👋<br>I'm Bella<br>an Electrical Engineering and Computer Science Student <br/> here is my first version of my personal website
 
 ---
 ##### TOOLS I USE:
