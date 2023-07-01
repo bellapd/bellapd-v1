@@ -9,7 +9,7 @@ Here are the list of tools that I used to make this website:
 - Chakra UI
 - Spotify API
 - Markdown
-- 
+  
 ##### NOW
 - ✨ Latest Project:
   - [Personal Website] (https://bellapd.vercel.app);
