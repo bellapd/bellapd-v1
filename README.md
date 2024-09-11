@@ -1,7 +1,6 @@
-<h3>Hey, call me Bella</h3>
+<h1>Hey,  you can call me Bella</h1>
 <br />
 I am I am a lifelong learner and a curious individual.It all started when I wrote my first line of code and realized I could solve problems with just my computer. Since then, I have been hooked on tech, exploring AI, machine learning, and how these tools can put an impact to the community.
----
 
 ##### What I am working on
 
