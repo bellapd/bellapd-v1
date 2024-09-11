@@ -1,23 +1,26 @@
-<h3>Hey 👋<br>I'm Bella<br>an Electrical Engineering and Computer Science Student <br/> Here is my first version of my personal website
-
+<h3>Hey, call me Bella</h3>
+<br />
+I am I am a lifelong learner and a curious individual.It all started when I wrote my first line of code and realized I could solve problems with just my computer. Since then, I have been hooked on tech, exploring AI, machine learning, and how these tools can put an impact to the community.
 ---
-##### TOOLS I USE:
-Here are the list of tools that I used to make this website:
 
-- Next js
-- Typescript React
-- Chakra UI
-- Spotify API
-- Markdown
-  
-##### NOW
+##### What I am working on
+
 - ✨ Latest Project:
-  - [Personal Website] (https://bellapd.vercel.app);
-  - [Schedulearn] - Frontend Design
-##### BIO
+  - [Teach Me] (https://teachme-ss.vercel.app); <br/>
+    Teach Me is a web application that helps students to find tutors and vice versa with no boundaries of location.
+    - Tools and Frameworks: React, Next-js, .js, .tsx, .css, Tailwind css, Vercel
+  - [Navi Together] 
+    Navi Together is a web application that helps people to find a travel buddy to go on a trip together.
+    - Tools and Frameworks: Ruby Roda, Slim, PostgreSQL, Heroku
 
-- 🏫 I'm currently studying at **National Trsing Hua University**
-- ⚙️ I use : `React`, `Next-js`, `.js`, `.tsx`, `.css`, `Docker`.
-- 🌱 Learning all about **web development (Frontend & Backend)**
-- 💬 Ping me about **design**, **development**, **design thinking**
+##### A little bit about me
+
+- 🏫 I graduate from  **National Tsing Hua University**
+- ⚙️ Tech Stack:
+    1. Software Development:
+   `React`, `Next-js`, `.js`, `.tsx`, `.css`, `Tailwind css`, `Vercel`, `Ruby`, `Heroku`.
+    2. Data Analysis and Computational Statistics
+    `Python`,`Ruby`,`R`,`SQL`
+- 🌱 I am currently learning about  **Large Language Modeling (LLM), Semantics Analysis, and Everything about machine**
 - 📫 Reach me: [annabellaputridirgo@gmail.com]
+

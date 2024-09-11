@@ -1,0 +1,48 @@
+---
+title: NaviTogether
+date: "2024-07-05"
+readingTime: 3 mins
+description: Never get lost alone again
+authors: ["Annabella Putri Dirgo"]
+tags: ["portfolio", "webdev"]
+publish: true
+---
+
+## Tech Stack Used
+
+- Ruby Roda
+- Heroku
+- PostgreSQL
+- Github OAuth
+
+## The Problem 
+When brainstorming ideas, we got connected with one same hobby which is traveling. Although we all enjoy
+traveling, it is tough for us to meet because we reside in separate regions. As a result, our project intends to
+develop a web app that will help users plan their journeys by sharing itineraries and estimating the distance
+between each member's location and the destination.
+
+## What is NaviTogether?
+NaviTogether is a web application that helps people find a travel buddy to go on a trip together. Users can
+create a room, invite friends, and share their location with each other. This app is designed to make it easier
+for people to plan trips and share their experiences with others. By using NaviTogether, users can connect
+with like-minded individuals and explore new places together. The app also allows users to create a list of
+destinations and share it with their friends, making it easier to plan trips and stay organized. 
+
+## System Architecture
+![NaviTogether System Architecture](/images/navitogether/img_3_1.png "NaviTogether System Architecture")
+
+## Features 
+Several features of NaviTogether is:
+1. Account login and sign in using email and even Github SSO.
+2. Adding a point of interest ( destinations ) and share it our friends.
+3. Sharing location to people that we gave access to.
+4. Create a room to manage people and plan the trip.
+
+## Security Concerns
+Given our web app's focus on sharing trip itineraries and location data, security was our number one
+consideration while creating it. One of our primary worries was data privacy and unwanted access. Users
+disclose sensitive trip plans, and illegal access may result in privacy violations. There's also the possibility
+that the app's APIs will be exploited, allowing hackers to access the backend and cause data leaks or worse.
+Furthermore, we were acutely aware of the possibility of data breaches. Given the nature of our software,
+which involves revealing personal whereabouts, a hack might put users at risk of stalking or other harmful
+activity. As a result, protecting personal information and avoiding these risks is vital.

@@ -26,10 +26,6 @@ const dropdownLinks = [
     path: "/",
   },
   {
-    name: "About",
-    path: "/about",
-  },
-  {
     name: "Posts",
     path: "/posts",
   },

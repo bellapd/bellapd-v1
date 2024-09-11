@@ -21,6 +21,7 @@ import Footer from "../components/Main/Footer";
 import Readall from "../components/Main/Readall";
 import Spotify from "../components/Spotify/NowPlaying";
 
+
 export default function Home({ posts }: { posts: Post[] }): JSX.Element {
   const isDesktop = useBreakpointValue({ base: false, md: true });
   return (
@@ -36,12 +37,14 @@ export default function Home({ posts }: { posts: Post[] }): JSX.Element {
           >
             <Image src="/images/avatar.png" boxSize="140px" />
             <Heading as="h1" fontSize="4rem" fontWeight="700">
-              Bella
+              Hey, Call me Bella
             </Heading>
 
-            <VStack mt={3} spacing={2} align="left" justify="left">
+            <VStack mt={2} spacing={2} align="left" justify="left">
               <Text>
-                A web developer enthusiast, long time learner, and a curious
+              I am a lifelong learner and a curious individual. It all started when I wrote my first line of code and realized I could solve problems with just my computer. Since then, I have been hooked on tech, exploring AI, machine learning, and how these tools can put an impact to the community.
+              <br />
+              When I am not breaking down complex algorithms, you can find me lost in a book 📖, perfecting my yoga poses🧘🏻‍♀️, or trying to figure out how many cups of coffee ☕️ it takes to fuel creativity (spoiler: it is a lot).
               </Text>
             </VStack>
             <Footer />
@@ -98,9 +101,9 @@ export default function Home({ posts }: { posts: Post[] }): JSX.Element {
               ))}
             </SimpleGrid>
             <Readall />
-            <Spotify />
           </Box>
         </VStack>
+        <Spotify />
       </Container>
     </Layout>
   );
