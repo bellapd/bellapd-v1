@@ -23,7 +23,7 @@ export default function Footer(): JSX.Element {
     {
       key: "resume",
       icon: <IoIosPaper style={{ fontSize: size }} />,
-      url: "https://drive.google.com/file/d/1dZOBymir2dmN6jAKRVSCkXmND_vo-xgx/view?usp=share_link",
+      url: "https://shorturl.at/Lmhs3",
     },
   ];
 
